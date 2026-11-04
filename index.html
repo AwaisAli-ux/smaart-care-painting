@@ -1,0 +1,1541 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Smaart Care Coloring Club</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Online coloring pages for kids aged 3 to 12. New drawings every month. Tap to fill, paint with brushes and save your artwork.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: Cyprus green + Sand Dune paper. Marketing pages are short and single-column; the member portal is an online coloring studio (reference | canvas | tools). */
+:root{
+  --paper:#F0EDE5; --sheet:#FBFAF6; --ink:#004643; --ink-soft:#4D6966; --line:#DCD6C8; --shade:#E3DDCF;
+  --band-bg:#004643; --band-fg:#F0EDE5; --band-soft:#A8C4BF;
+  --btn-bg:#004643; --btn-fg:#F0EDE5;
+  --sun:#E9A93B; --coral:#D8714F; --sage:#86AE74; --sea:#5B9E99;
+  --tint-sea:#D7E7E3; --tint-sage:#DFE9D5; --tint-coral:#F3DDD3;
+  --display:"Baloo 2", "Trebuchet MS", system-ui, sans-serif;
+  --body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0B2321; --sheet:#11312E; --ink:#F0EDE5; --ink-soft:#A9BFBA; --line:#21504B; --shade:#082F2C;
+  --band-bg:#062B28; --band-fg:#F0EDE5; --band-soft:#93B5AF;
+  --btn-bg:#F0EDE5; --btn-fg:#004643;
+  --sun:#EDB654; --coral:#E08665; --sage:#98BF86; --sea:#6FB2AC;
+  --tint-sea:#173E3A; --tint-sage:#22392A; --tint-coral:#3D2A22;
+  color-scheme:dark }}
+:root[data-theme="dark"]{
+  --paper:#0B2321; --sheet:#11312E; --ink:#F0EDE5; --ink-soft:#A9BFBA; --line:#21504B; --shade:#082F2C;
+  --band-bg:#062B28; --band-fg:#F0EDE5; --band-soft:#93B5AF;
+  --btn-bg:#F0EDE5; --btn-fg:#004643;
+  --sun:#EDB654; --coral:#E08665; --sage:#98BF86; --sea:#6FB2AC;
+  --tint-sea:#173E3A; --tint-sage:#22392A; --tint-coral:#3D2A22;
+  color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.narrow{max-width:760px}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px;border-radius:6px}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;padding-block:12px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:800;font-size:1.4rem}
+.logo svg{width:34px;height:34px;flex:none}
+.logo small{display:block;font-family:var(--body);font-weight:600;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-top:-4px}
+nav{margin-left:auto;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:600;padding:8px 12px;border-radius:10px;color:var(--ink-soft)}
+nav a:hover,nav a[aria-current="page"]{color:var(--ink);background:var(--sheet)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 1rem var(--body);padding:13px 22px;border-radius:12px;border:2px solid var(--ink);background:var(--sheet);color:var(--ink);cursor:pointer;text-decoration:none;box-shadow:0 3px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 4px 0 var(--ink)}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink)}
+.btn.primary{background:var(--btn-bg);color:var(--btn-fg);border-color:var(--btn-bg);box-shadow:0 3px 0 var(--sun)}
+.btn.primary:hover{box-shadow:0 4px 0 var(--sun)}
+.btn.small{padding:8px 14px;font-size:.9rem;box-shadow:0 2px 0 var(--ink)}
+.btn.primary.small{box-shadow:0 2px 0 var(--sun)}
+.btn.block{width:100%}
+.btn svg{width:18px;height:18px;flex:none}
+nav .btn{padding:8px 16px;margin-left:6px;background:var(--btn-bg);color:var(--btn-fg);border-color:var(--btn-bg);box-shadow:0 2px 0 var(--sun)}
+nav .btn:hover{background:var(--btn-bg);color:var(--btn-fg)}
+.btn.ghost-light{background:transparent;color:var(--band-fg);border-color:var(--band-soft);box-shadow:none}
+.btn.ghost-light:hover{border-color:var(--band-fg);box-shadow:none}
+
+.eyebrow{font-weight:700;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.lead{font-size:1.15rem;color:var(--ink-soft);max-width:34em}
+section.band{padding-block:72px}
+.sec-head{display:grid;gap:10px;margin-bottom:32px}
+.sec-head h2{font-size:clamp(1.8rem,4vw,2.5rem)}
+.note{font-size:.88rem;color:var(--ink-soft)}
+.center{text-align:center}
+
+[data-page]{display:none}
+[data-page].on{display:block}
+
+/* Hero */
+.hero{padding-block:56px 40px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,6vw,4rem);margin:12px 0 18px}
+.hero h1 .scribble{position:relative;white-space:nowrap}
+.hero h1 .scribble svg{position:absolute;left:-2%;bottom:-.12em;width:104%;height:.4em;overflow:visible}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:28px;color:var(--ink-soft);font-weight:600;font-size:.92rem}
+.facts span{display:flex;align-items:center;gap:8px}
+.facts i{width:10px;height:10px;border-radius:50%;border:2px solid var(--ink);display:inline-block}
+.sheet{background:var(--sheet);border:2px solid var(--ink);border-radius:20px;padding:18px;box-shadow:8px 8px 0 var(--shade);position:relative}
+.sheet .tag{position:absolute;top:-14px;left:20px;background:var(--sun);color:#004643;border:2px solid var(--ink);border-radius:999px;font-weight:700;font-size:.78rem;padding:2px 12px}
+.hero-canvas{border-radius:12px;overflow:hidden;border:1.5px solid var(--line)}
+.hero-canvas svg{display:block;width:100%;height:auto;background:#fff;cursor:pointer;touch-action:manipulation}
+.mini-pal{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center}
+.pf{animation:paint .6s ease-out backwards}
+@keyframes paint{from{fill:#FFFFFF}}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;list-style:none;padding:0;margin:0}
+.steps li{display:grid;gap:8px;padding:24px;background:var(--sheet);border:1px solid var(--line);border-radius:var(--r);align-content:start}
+.steps .num{font-family:var(--display);font-weight:800;font-size:1.1rem;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;border:2px solid #004643;color:#004643}
+.steps h3{font-size:1.3rem}
+.steps p{color:var(--ink-soft)}
+.toolchips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.toolchips span{font-weight:700;font-size:.85rem;border-radius:999px;padding:6px 14px;background:var(--sheet);border:1px solid var(--line)}
+
+/* Drawing cards */
+.dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:20px}
+.dcard{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;background:var(--sheet);border:1.5px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .15s,border-color .15s;min-width:0;position:relative}
+.dcard:hover{transform:translateY(-3px);border-color:var(--ink)}
+.dcard:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.dthumb{background:#fff;border-bottom:1.5px solid var(--line);aspect-ratio:1;max-width:100%}
+.dthumb svg{width:100%;height:100%;display:block}
+.dbody{padding:12px 14px 14px;display:grid;gap:6px}
+.dname{font-family:var(--display);font-weight:800;font-size:1.2rem;line-height:1.1}
+.meta{display:flex;flex-wrap:wrap;gap:6px;font-size:.78rem;color:var(--ink-soft);font-weight:600}
+.pill{border:1px solid var(--line);border-radius:999px;padding:1px 10px;background:var(--paper)}
+.newtag{position:absolute;top:10px;left:10px;background:#004643;color:#F0EDE5;font-size:.7rem;font-weight:800;letter-spacing:.1em;border-radius:6px;padding:2px 8px}
+.acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+
+/* Pricing */
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.plan{background:var(--sheet);border:2px solid var(--ink);border-radius:18px;padding:24px 20px;display:flex;flex-direction:column;gap:6px;position:relative}
+.plan.best{box-shadow:6px 6px 0 var(--sun)}
+.plan h3{font-size:1.35rem}
+.price{font-family:var(--display);font-weight:800;font-size:2.8rem;line-height:1;margin:10px 0 2px;font-variant-numeric:tabular-nums}
+.price sup{font-size:1.2rem;vertical-align:top;position:relative;top:.5em;margin-right:2px}
+.renew{font-size:.85rem;color:var(--ink-soft);margin-bottom:16px}
+.plan .btn{margin-top:auto}
+.bonus{position:absolute;top:-13px;right:16px;background:var(--sun);color:#004643;font-weight:800;font-size:.78rem;border-radius:999px;padding:2px 12px;border:2px solid var(--ink)}
+.fine{font-size:.85rem;color:var(--ink-soft);margin-top:26px;max-width:62em}
+.fine a{font-weight:600}
+.incl{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 10px;margin:-8px auto 30px;max-width:900px}
+.incl span{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:.88rem;background:var(--sheet);border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+.incl span svg{width:15px;height:15px;color:var(--sage);flex:none}
+.incl .incl-k{background:none;border:0;padding:6px 4px;font-weight:800;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);width:100%;justify-content:center}
+.incl-single{margin:22px auto 0}
+.single{max-width:440px;margin:0 auto}
+.single .plan{padding:32px 28px;box-shadow:8px 8px 0 var(--shade)}
+.single .price{font-size:3.6rem}
+.secure{display:flex;gap:8px;align-items:center;justify-content:center;font-size:.85rem;color:var(--ink-soft);margin-top:12px;text-align:center}
+
+/* FAQ */
+.faq{display:grid;gap:10px}
+.faq details{background:var(--sheet);border:1px solid var(--line);border-radius:var(--r);padding:4px 20px}
+.faq summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::after{content:"+";font-family:var(--display);font-size:1.4rem;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding-bottom:16px;color:var(--ink-soft)}
+
+.teaser{background:var(--band-bg);color:var(--band-fg)}
+.teaser .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-block:44px}
+.teaser h2{font-size:clamp(1.6rem,3.5vw,2.2rem)}
+.teaser .note{color:var(--band-soft)}
+.teaser .btn{background:var(--band-fg);color:#004643;border-color:var(--band-fg);box-shadow:0 3px 0 var(--sun)}
+
+/* Forms */
+.card{background:var(--sheet);border:2px solid var(--ink);border-radius:18px;padding:28px}
+.form{display:grid;gap:16px}
+.field{display:grid;gap:6px;min-width:0}
+.field label{font-weight:700;font-size:.9rem}
+.field input,.field select,.field textarea{font:inherit;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:10px;padding:11px 13px;width:100%}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--ink);outline:none;box-shadow:0 0 0 3px var(--tint-sea)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.status{font-weight:600;font-size:.92rem;padding:10px 14px;border-radius:10px;background:var(--tint-sage)}
+.auth{max-width:440px;margin:0 auto;padding-block:64px}
+.auth h1{font-size:2.2rem;margin-bottom:6px}
+
+/* Portal */
+.p-hero{margin-top:28px;background:var(--band-bg);color:var(--band-fg);border-radius:26px;padding:30px 32px;position:relative;overflow:hidden;display:grid;gap:22px}
+.p-hero .deco{position:absolute;right:-10px;bottom:-24px;width:260px;opacity:.16;pointer-events:none}
+.p-hero .deco *{stroke:var(--band-fg);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.p-top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;position:relative}
+.p-top h1{font-size:clamp(2rem,4.5vw,2.8rem)}
+.p-top p{color:var(--band-soft);margin-top:6px}
+.p-stats{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:12px 40px;position:relative;border-top:1px solid rgba(240,237,229,.18);padding-top:18px}
+.p-stats span{display:block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--band-soft)}
+.p-stats b{font-family:var(--display);font-size:1.6rem;font-variant-numeric:tabular-nums;line-height:1.2}
+.chip{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:.8rem;border-radius:999px;padding:4px 12px;background:rgba(240,237,229,.12);color:var(--band-fg)}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--sage)}
+.demo{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#004643;background:var(--sun);border-radius:6px;padding:2px 8px;display:inline-block;margin-bottom:10px}
+.tabs{display:flex;gap:6px;border-bottom:2px solid var(--line);margin:28px 0 24px;overflow-x:auto}
+.tabs button{font:700 .95rem var(--body);background:none;border:0;color:var(--ink-soft);padding:10px 14px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap}
+.tabs button[aria-selected="true"]{color:var(--ink);border-color:var(--sun)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.filters button{font:700 .88rem var(--body);background:var(--sheet);color:var(--ink-soft);border:1px solid var(--line);border-radius:999px;padding:7px 16px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--btn-bg);color:var(--btn-fg);border-color:var(--btn-bg)}
+.filterrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:10px}
+.search{min-width:0;flex:0 1 280px}
+.search input{padding:9px 14px;border-radius:999px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.lv-Easy{background:#DFF0D2!important;color:#2E5D1E}.lv-Medium{background:#FCE9C2!important;color:#7A4E00}.lv-Hard{background:#F7D4CB!important;color:#8A2E1A}
+.empty{background:var(--sheet);border:2px dashed var(--line);border-radius:18px;padding:40px 24px;text-align:center;display:grid;gap:12px;justify-items:center}
+.empty h3{font-size:1.5rem}
+.sub-box{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.sub-box div{background:var(--sheet);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.sub-box b{display:block;font-size:1.15rem;font-variant-numeric:tabular-nums}
+.sub-box span{font-size:.78rem;color:var(--ink-soft);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+
+/* Studio */
+.s-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-block:24px 18px}
+.s-title{display:flex;align-items:center;gap:8px;min-width:0;flex:1}
+.s-title h1{font-size:clamp(1.5rem,3.5vw,2.1rem);overflow-wrap:anywhere}
+.iconbtn{background:var(--sheet);border:1.5px solid var(--line);color:var(--ink);border-radius:10px;width:38px;height:38px;display:grid;place-items:center;cursor:pointer;flex:none}
+.iconbtn:hover{border-color:var(--ink)}
+.iconbtn svg{width:18px;height:18px}
+.s-state{font-size:.82rem;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+.s-state.dirty{color:var(--coral)}
+.studio{display:grid;grid-template-columns:230px minmax(0,1fr);grid-template-areas:"ref tools" "pal canvas";gap:18px 22px;align-items:start;padding-bottom:64px}
+.s-ref{grid-area:ref;background:var(--sheet);border:1.5px solid var(--line);border-radius:16px;padding:12px;display:grid;gap:8px}
+.s-ref .k{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.s-ref svg{width:100%;height:auto;display:block;background:#fff;border-radius:10px;border:1px solid var(--line)}
+.s-pal{grid-area:pal;background:var(--sheet);border:1.5px solid var(--line);border-radius:16px;padding:12px}
+.swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.sw{appearance:none;border:2px solid rgba(0,0,0,.18);border-radius:50%;aspect-ratio:1;width:100%;cursor:pointer;padding:0;transition:transform .1s}
+.sw:hover{transform:scale(1.08)}
+.sw[aria-pressed="true"]{outline:3px solid var(--ink);outline-offset:2px}
+.s-tools{grid-area:tools;display:flex;gap:8px;flex-wrap:wrap;align-items:center;background:var(--sheet);border:1.5px solid var(--line);border-radius:16px;padding:10px}
+.tool{display:inline-flex;flex-direction:column;align-items:center;gap:2px;min-width:64px;padding:8px 10px;border-radius:12px;border:2px solid transparent;background:transparent;color:var(--ink);font:700 .78rem var(--body);cursor:pointer}
+.tool svg{width:26px;height:26px}
+.tool:hover{background:var(--paper)}
+.tool[aria-pressed="true"]{border-color:var(--ink);background:var(--paper)}
+.tool:disabled{opacity:.35;cursor:not-allowed}
+.sep{width:1.5px;align-self:stretch;background:var(--line);margin:4px 2px}
+.sizes{display:flex;gap:6px;align-items:center;padding:0 4px}
+.size{width:40px;height:40px;border-radius:10px;border:2px solid transparent;background:transparent;display:grid;place-items:center;cursor:pointer}
+.size i{display:block;border-radius:50%;background:var(--ink)}
+.size[aria-pressed="true"]{border-color:var(--ink);background:var(--paper)}
+.cur{width:34px;height:34px;border-radius:50%;border:2px solid var(--ink);flex:none}
+.s-tools .grow{flex:1}
+.s-canvas{grid-area:canvas;background:var(--sheet);border:2px solid var(--ink);border-radius:18px;padding:10px;box-shadow:8px 8px 0 var(--shade)}
+.s-canvas svg{display:block;width:100%;max-width:min(100%,72vh);margin:0 auto;height:auto;background:#fff;border-radius:10px;touch-action:none;user-select:none;-webkit-user-select:none}
+.s-canvas .Lb{pointer-events:none}
+.s-canvas.m-eraser .Lb{pointer-events:visibleStroke}
+.s-canvas.m-fill svg{cursor:pointer}
+.s-canvas.m-brush svg,.s-canvas.m-eraser svg{cursor:crosshair}
+
+.btn.submit{background:var(--sun);color:#004643;border-color:#004643;box-shadow:0 3px 0 #004643}
+.btn.submit:hover{box-shadow:0 4px 0 #004643}
+.scorepill{background:var(--sun)!important;color:#004643;border-color:var(--sun)!important;font-weight:800}
+.celebrate{position:fixed;inset:0;z-index:35;background:rgba(0,30,28,.55);display:grid;place-items:center;padding:16px}
+#confetti{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.cbox{position:relative;background:var(--sheet);border:3px solid var(--ink);border-radius:26px;padding:28px 24px 24px;width:min(400px,100%);text-align:center;display:grid;gap:8px;box-shadow:10px 10px 0 var(--sun);animation:pop .45s cubic-bezier(.2,1.5,.4,1)}
+@keyframes pop{from{transform:scale(.6);opacity:0}}
+.cstars{display:flex;justify-content:center;gap:6px}
+.cstars svg{width:40px;height:40px}
+.cscore{font-family:var(--display);font-weight:800;line-height:1;margin-top:6px}
+.cscore b{font-size:5.2rem}
+.cscore span{font-size:2rem;color:var(--ink-soft)}
+.cbox h3{font-size:2rem}
+@media (prefers-reduced-motion:reduce){.cbox{animation:none}}
+
+/* Admin */
+.portal-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;padding-block:40px 24px}
+.portal-head h1{font-size:clamp(1.9rem,4vw,2.6rem)}
+.admin-grid{display:grid;grid-template-columns:380px 1fr;gap:28px;align-items:start;padding-bottom:64px}
+.tbl{overflow-x:auto;background:var(--sheet);border:1px solid var(--line);border-radius:var(--r)}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:.92rem}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:middle}
+th{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+td.n{font-variant-numeric:tabular-nums}
+td .tn{width:44px;height:44px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
+td .tn svg{width:100%;height:100%;display:block}
+tr:last-child td{border-bottom:0}
+.linkbtn{background:none;border:0;color:var(--coral);font:700 .88rem var(--body);cursor:pointer;padding:4px}
+
+/* Legal */
+.legal{padding-block:48px 72px}
+.legal h1{font-size:clamp(2rem,4.5vw,2.8rem);margin-bottom:6px}
+.legal h2{font-size:1.35rem;margin:32px 0 8px}
+.legal p,.legal li{color:var(--ink-soft);max-width:68ch}
+.legal p+p{margin-top:10px}
+.legal ul{padding-left:20px;margin:8px 0}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;padding-block:48px 72px;align-items:start}
+.info{display:grid;gap:18px}
+.info .k{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--ink-soft)}
+.copy{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.copy code{font:600 1rem var(--body);user-select:all;word-break:break-all}
+
+/* Footer */
+footer{background:var(--band-bg);color:var(--band-fg);padding-block:44px 32px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
+footer h4{margin:0 0 10px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--band-soft)}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+footer a{text-decoration:none;font-weight:600}
+footer a:hover{text-decoration:underline}
+footer address,footer .note{font-style:normal;color:var(--band-soft);font-size:.92rem}
+.legalline{grid-column:1/-1;border-top:1px solid rgba(240,237,229,.18);padding-top:16px;font-size:.82rem;color:var(--band-soft)}
+
+/* Modal + toast */
+.modal{position:fixed;inset:0;z-index:30;background:rgba(0,30,28,.45);display:grid;place-items:center;padding:16px}
+.mbox{background:var(--sheet);border:2px solid var(--ink);border-radius:20px;padding:24px;width:min(420px,100%);display:grid;gap:14px;box-shadow:8px 8px 0 var(--sun)}
+.mbox h3{font-size:1.5rem}
+.mbtns{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--btn-bg);color:var(--btn-fg);padding:12px 18px;border-radius:12px;font-weight:600;font-size:.92rem;z-index:40;max-width:calc(100% - 32px)}
+
+@media (max-width:960px){
+  .plans{grid-template-columns:repeat(2,1fr)}
+  .admin-grid{grid-template-columns:1fr}
+  .studio{grid-template-columns:1fr;grid-template-areas:"tools" "canvas" "pal" "ref"}
+  .swatches{grid-template-columns:repeat(12,1fr)}
+  .s-ref{grid-template-columns:120px 1fr;align-items:center}
+}
+@media (max-width:760px){
+  .hero .wrap,.contact-grid{grid-template-columns:1fr}
+  .steps,.sub-box{grid-template-columns:1fr}
+  footer .wrap{grid-template-columns:1fr}
+  .row2{grid-template-columns:1fr}
+  nav{margin-left:0;width:100%}
+  section.band{padding-block:52px}
+  .p-hero{padding:24px}
+  .p-stats{grid-template-columns:1fr 1fr}
+  .swatches{grid-template-columns:repeat(8,1fr)}
+  .tool{min-width:52px;padding:6px}
+  .sep{display:none}
+}
+@media (max-width:460px){
+  .plans{grid-template-columns:1fr}
+  .dgrid{grid-template-columns:1fr 1fr;gap:12px}
+  .dname{font-size:1.05rem}
+  .swatches{grid-template-columns:repeat(6,1fr)}
+}
+@media (prefers-reduced-motion:reduce){ .pf{animation:none} .btn,.dcard,.sw{transition:none} }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#home" data-route="home" aria-label="Smaart Care home">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <g transform="rotate(-35 20 20)">
+          <rect x="13" y="12" width="14" height="22" rx="2" fill="#004643" stroke="#004643" stroke-width="2.5"/>
+          <path d="M13 12 L20 2 L27 12 Z" fill="#E9A93B" stroke="#004643" stroke-width="2.5" stroke-linejoin="round"/>
+          <line x1="13" y1="19" x2="27" y2="19" stroke="#F0EDE5" stroke-width="2"/>
+          <line x1="13" y1="27" x2="27" y2="27" stroke="#F0EDE5" stroke-width="2"/>
+        </g>
+      </svg>
+      <span>Smaart Care<small>Coloring Club</small></span>
+    </a>
+    <nav aria-label="Main">
+      <a href="#home" data-route="home">Home</a>
+      <a href="#pricing" data-route="pricing">Pricing</a>
+      <a href="#contact" data-route="contact">Contact</a>
+      <a class="btn" href="#login" data-route="login">Member login</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ============ HOME ============ -->
+<div data-page="home">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Online coloring · Ages 3 to 12</span>
+        <h1>Coloring pages your kids color online, <span class="scribble">new every month.<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14 C 50 4, 110 4, 196 10" stroke="var(--sun)" stroke-width="8" fill="none" stroke-linecap="round"/></svg></span></h1>
+        <p class="lead">Subscribe once and your family portal fills up with 50+ fresh drawings every month. Kids pick a picture, tap to fill colors, paint with brushes and save their artwork.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#pricing" data-route="pricing">See plans</a>
+          <a class="btn" href="#login" data-route="login">Member login</a>
+        </div>
+        <div class="facts">
+          <span><i style="background:var(--sea)"></i>50+ new drawings every month</span>
+          <span><i style="background:var(--sage)"></i>Works on tablet, phone &amp; computer</span>
+          <span><i style="background:var(--coral)"></i>Cancel anytime</span>
+        </div>
+      </div>
+      <div class="sheet">
+        <span class="tag">Try it: pick a color, tap a shape</span>
+        <div class="hero-canvas" id="heroCanvas"></div>
+        <div class="mini-pal" id="heroPal" aria-label="Colors"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" style="padding-top:32px">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">How it works</span><h2>Three steps to coloring time</h2></div>
+      <ol class="steps">
+        <li><span class="num" style="background:#F2DDB4">1</span><h3>Pick a plan</h3><p>Choose 1, 3, 6 or 12 months and check out securely.</p></li>
+        <li><span class="num" style="background:#BFDAD5">2</span><h3>Check your email</h3><p>Your portal login ID and password arrive right after payment.</p></li>
+        <li><span class="num" style="background:#D3E3C2">3</span><h3>Pick a picture &amp; color</h3><p>Log in, choose a drawing and start coloring right in the browser.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Inside the portal</span><h2>Toys, animals, trees, the ocean and the sky</h2><p class="lead">A few of this month's drawings. Easy ones for little hands, more detail for older kids.</p></div>
+      <div class="dgrid" id="homeDrawings"></div>
+      <div class="toolchips"><span>Tap-to-fill</span><span>3 brush sizes</span><span>Eraser</span><span>Undo &amp; redo</span><span>24 colors</span><span>Score out of 10</span><span>Save &amp; rename artwork</span></div>
+    </div>
+  </section>
+
+  <section class="teaser">
+    <div class="wrap">
+      <div><h2>Plans start at $35 a month</h2><p class="note" style="margin-top:6px">50+ new drawings every month. Longer plans include free bonus months.</p></div>
+      <a class="btn" href="#pricing" data-route="pricing">View pricing</a>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="eyebrow">Questions</span><h2>Parents usually ask</h2></div>
+      <div class="faq">
+        <details><summary>Is this a recurring subscription?</summary><p>Yes. Every plan renews automatically at the end of its period (monthly, every 3 months, every 6 months or yearly) until you cancel. You can cancel anytime from your portal and you keep access until the end of the period you paid for.</p></details>
+        <details><summary>How do kids color?</summary><p>They pick a drawing in the portal, choose a color and tap any part of the picture to fill it. There are brushes for free drawing, an eraser, and undo. When they finish, they tap Submit and get a score out of 10 for how closely their colors match the example, with a little celebration. Then they tap Save, give the picture a name, and find it later (with its score) in My Artwork.</p></details>
+        <details><summary>What devices does it work on?</summary><p>Any tablet, phone or computer with a modern web browser. Nothing to install. Tablets give little ones the most room to color.</p></details>
+        <details><summary>What ages is it for?</summary><p>Kids from 3 to 12. Each drawing is marked Easy or Medium so you can pick the right one.</p></details>
+        <details><summary>What is your refund policy?</summary><p>You can request a full refund within 3 days of purchase or renewal. See our <a href="#refund-policy" data-route="refund-policy">Refund Policy</a>.</p></details>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PRICING ============ -->
+<div data-page="pricing">
+  <section class="band" style="padding-top:56px">
+    <div class="wrap">
+      <div id="pricingAll">
+        <div class="sec-head center" style="justify-items:center">
+          <span class="eyebrow">Pricing</span>
+          <h2 style="font-size:clamp(2.2rem,5vw,3.2rem)">Choose your plan</h2>
+          <p class="lead">Every plan gives full access to the coloring portal and 50+ new drawings every month while you're subscribed.</p>
+        </div>
+        <div class="incl" aria-label="What's included"><span class="incl-k">Every plan includes</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>Online coloring studio</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>50+ new drawings every month</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>Animals, ocean, sky, vehicles &amp; more</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>Score out of 10 on every picture</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>Save &amp; rename artwork</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>Works on tablet, phone &amp; computer</span></div>
+        <div class="plans" id="plansGrid"></div>
+        <p class="fine">Prices in USD. Subscriptions renew automatically at the end of each billing period until cancelled. Cancel anytime from your portal. Refunds available within 3 days of purchase or renewal, see our <a href="#refund-policy" data-route="refund-policy">Refund Policy</a>. Purchaser must be 18 or older.</p>
+      </div>
+      <div id="pricingOne" hidden>
+        <div class="single">
+          <p class="eyebrow center" style="margin-bottom:12px">Your selected plan</p>
+          <div id="singlePlan"></div>
+          <div class="incl incl-single" aria-label="What's included"><span class="incl-k">Every plan includes</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>Online coloring studio</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>50+ new drawings every month</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>Animals, ocean, sky, vehicles &amp; more</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>Score out of 10 on every picture</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>Save &amp; rename artwork</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>Works on tablet, phone &amp; computer</span></div>
+          <p class="secure"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Secure checkout. Your login details are emailed right after payment.</p>
+          <p class="fine center">Prices in USD. Renews automatically until cancelled. Cancel anytime. <a href="#refund-policy" data-route="refund-policy">3-day refund policy</a>. Purchaser must be 18+.</p>
+          <p class="center" style="margin-top:20px"><a href="#pricing" data-route="pricing" style="font-weight:700">Compare all plans</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ LOGIN ============ -->
+<div data-page="login">
+  <div class="wrap">
+    <div class="auth">
+      <h1>Member login</h1>
+      <p class="note" style="margin-bottom:24px">Use the login ID and password we emailed you after purchase.</p>
+      <form class="card form" id="loginForm" novalidate>
+        <div class="field"><label for="loginId">Email or login ID</label><input id="loginId" type="text" autocomplete="username" required></div>
+        <div class="field"><label for="loginPw">Password</label><input id="loginPw" type="password" autocomplete="current-password" required></div>
+        <p class="status" id="loginStatus" hidden style="background:var(--tint-coral)"></p>
+        <button class="btn primary block" type="submit">Log in</button>
+        <p class="note center"><a href="#contact" data-route="contact">Forgot your password?</a></p>
+      </form>
+      <p class="note center" style="margin-top:20px">Not a member yet? <a href="#pricing" data-route="pricing" style="font-weight:700">See plans</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PORTAL ============ -->
+<div data-page="portal">
+  <div class="wrap">
+    <div id="portalHome" style="padding-bottom:80px">
+      <div class="p-hero">
+        <svg class="deco" viewBox="0 0 300 200" aria-hidden="true"><path d="M40 160 L150 60 L260 160 Z"/><rect x="70" y="150" width="160" height="80"/><circle cx="250" cy="40" r="20"/><path d="M20 60 q20 -20 40 0 q20 -20 40 0"/></svg>
+        <div class="p-top">
+          <div>
+            <span class="demo">Preview data</span>
+            <h1>Welcome back!</h1>
+            <p>Pick a drawing and start coloring. Tap Submit when you finish to get your score!</p>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="chip"><i></i>Active member</span><button class="btn small ghost-light" type="button" id="logoutBtn">Log out</button></div>
+        </div>
+        <div class="p-stats">
+          <div><span>Drawings to color</span><b id="statDrawings">0</b></div>
+          <div><span>New this month</span><b id="statNew">0</b></div>
+          <div><span>My artwork</span><b id="statArt">0</b></div>
+        </div>
+      </div>
+
+      <div class="tabs" role="tablist">
+        <button role="tab" aria-selected="true" data-tab="drawings">Drawings</button>
+        <button role="tab" aria-selected="false" data-tab="artwork" id="artTabBtn">My artwork</button>
+        <button role="tab" aria-selected="false" data-tab="account">My subscription</button>
+      </div>
+
+      <div id="tab-drawings">
+        <div class="filters" id="catFilters"></div>
+        <div class="filterrow">
+          <div class="filters" id="levelFilters" style="margin:0"></div>
+          <div class="field search"><label for="dSearch" class="sr">Search drawings</label><input id="dSearch" type="search" placeholder="Search drawings, e.g. lion" autocomplete="off"></div>
+        </div>
+        <p class="note" id="resultCount" style="margin-bottom:14px"></p>
+        <div class="dgrid" id="portalDrawings"></div>
+        <div class="center" style="margin-top:26px"><button class="btn" type="button" id="moreBtn" hidden>Show more drawings</button></div>
+      </div>
+      <div id="tab-artwork" hidden><div id="artGrid"></div></div>
+      <div id="tab-account" hidden>
+        <div class="sub-box">
+          <div><span>Plan</span><b>3 Months</b></div>
+          <div><span>Next renewal</span><b>Jan 14, 2027</b></div>
+          <div><span>Amount</span><b>$100.00</b></div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px">
+          <button class="btn small" type="button" data-action="manage">Update payment method</button>
+          <button class="btn small" type="button" data-action="cancel">Cancel subscription</button>
+          <button class="btn small" type="button" data-action="password">Change password</button>
+        </div>
+        <p class="note" style="margin-top:16px">If you cancel, you keep access until the end of your current billing period.</p>
+      </div>
+    </div>
+
+    <!-- Coloring studio -->
+    <div id="studio" hidden>
+      <div class="s-bar">
+        <button class="btn small" type="button" id="backBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>All drawings</button>
+        <div class="s-title">
+          <h1 id="sName">Drawing</h1>
+          <button class="iconbtn" type="button" id="renameBtn" aria-label="Rename"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button>
+          <span class="s-state" id="sState">Not saved yet</span>
+        </div>
+        <button class="btn submit" type="button" id="submitBtn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg>Submit</button>
+        <button class="btn primary" type="button" id="saveBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>Save</button>
+      </div>
+      <div class="studio">
+        <div class="s-ref"><span class="k">Example</span><div id="sRef"></div><p class="note">Use any colors you like!</p></div>
+        <div class="s-tools" role="toolbar" aria-label="Coloring tools">
+          <span class="cur" id="curColor" title="Current color"></span>
+          <button class="tool" type="button" data-tool="fill" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 11 11 3 3 11l8 8z"/><path d="M5 2l5 5"/><path d="M20 15s2 2.5 2 4a2 2 0 0 1-4 0c0-1.5 2-4 2-4z"/></svg>Fill</button>
+          <button class="tool" type="button" data-tool="brush" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.4 2.6a2 2 0 0 1 2.9 2.9L11 15.8 8.2 13Z"/><path d="M7 14c-2 0-3.5 1.5-3.5 3.5 0 1.3-.7 2.2-1.5 2.5 1 .7 2.3 1 3.5 1 2.5 0 4.5-2 4.5-4.5"/></svg>Brush</button>
+          <button class="tool" type="button" data-tool="eraser" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 21-4.3-4.3a1 1 0 0 1 0-1.4l10-10a1 1 0 0 1 1.4 0l5.6 5.6a1 1 0 0 1 0 1.4L13 21"/><path d="M22 21H7M5 11l9 9"/></svg>Eraser</button>
+          <span class="sep"></span>
+          <div class="sizes" aria-label="Brush size">
+            <button class="size" type="button" data-size="0" aria-pressed="false" aria-label="Thin brush"><i style="width:6px;height:6px"></i></button>
+            <button class="size" type="button" data-size="1" aria-pressed="true" aria-label="Medium brush"><i style="width:12px;height:12px"></i></button>
+            <button class="size" type="button" data-size="2" aria-pressed="false" aria-label="Thick brush"><i style="width:20px;height:20px"></i></button>
+          </div>
+          <span class="sep"></span>
+          <button class="tool" type="button" id="undoBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/></svg>Undo</button>
+          <button class="tool" type="button" id="redoBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 14 5-5-5-5"/><path d="M20 9H9a5 5 0 0 0 0 10h3"/></svg>Redo</button>
+          <button class="tool" type="button" id="clearBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg>Start over</button>
+        </div>
+        <div class="s-pal"><div class="swatches" id="swatches" aria-label="Colors"></div></div>
+        <div class="s-canvas m-fill" id="sCanvas"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ADMIN ============ -->
+<div data-page="admin">
+  <div class="wrap">
+    <div class="portal-head"><div><span class="eyebrow">Admin</span><h1 style="margin-top:6px">Manage drawings</h1><p class="note">Upload new drawings and they appear in every member's portal. <b id="adminCount"></b></p></div></div>
+    <div class="admin-grid">
+      <form class="card form" id="uploadForm">
+        <h2 style="font-size:1.4rem">Upload a drawing</h2>
+        <div class="field"><label for="dName">Drawing name</label><input id="dName" placeholder="e.g. Happy Elephant"></div>
+        <div class="row2">
+          <div class="field"><label for="dCat">Category</label><select id="dCat"></select></div>
+          <div class="field"><label for="dLevel">Level</label><select id="dLevel"><option>Easy</option><option>Medium</option><option>Hard</option></select></div>
+        </div>
+        <div class="field"><label for="dMonth">Release month</label><input id="dMonth" type="month" value="2026-11" required></div>
+        <div class="field"><label for="dSvg">Drawing files (SVG)</label><input id="dSvg" type="file" accept=".svg,image/svg+xml" multiple required></div>
+        <p class="note">You can pick many SVG files at once. With several files, each drawing is named after its file (happy-elephant.svg becomes "Happy Elephant"). Each part of the picture must be a closed shape so it can be filled with one tap. Open lines (like a smile) show as outlines only.</p>
+        <p class="status" id="uploadStatus" hidden></p>
+        <button class="btn primary block" type="submit">Publish drawing</button>
+      </form>
+      <div style="min-width:0">
+        <div class="tbl">
+          <table>
+            <thead><tr><th></th><th>Name</th><th>Category</th><th>Level</th><th>Month</th><th>Parts</th><th></th></tr></thead>
+            <tbody id="adminRows"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CONTACT ============ -->
+<div data-page="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="eyebrow">Contact</span>
+        <h1 style="font-size:clamp(2rem,4.5vw,2.8rem);margin:8px 0 10px">We're here to help</h1>
+        <p class="note" style="margin-bottom:24px">Login trouble, billing or a drawing request. We reply within 1 business day.</p>
+        <form class="card form" id="contactForm">
+          <div class="row2">
+            <div class="field"><label for="cName">Your name</label><input id="cName" required autocomplete="name"></div>
+            <div class="field"><label for="cEmail">Email</label><input id="cEmail" type="email" required autocomplete="email"></div>
+          </div>
+          <div class="field"><label for="cTopic">Topic</label><select id="cTopic"><option>Login or password</option><option>Billing or subscription</option><option>Refund request</option><option>Drawing suggestion</option><option>Something else</option></select></div>
+          <div class="field"><label for="cMsg">Message</label><textarea id="cMsg" rows="5" required></textarea></div>
+          <p class="status" id="contactStatus" hidden></p>
+          <button class="btn primary" type="submit">Send message</button>
+        </form>
+      </div>
+      <div class="info card" style="border-width:1px;border-color:var(--line)">
+        <div><div class="k">Email</div><div class="copy"><code>support@smaartcare.online</code><button class="btn small" type="button" data-copy="support@smaartcare.online">Copy</button></div></div>
+        <div><div class="k">Office</div><address>Office 205, 2nd Floor<br>Akbar Arcade<br>Islamabad, Pakistan</address></div>
+        <div><div class="k">Support hours</div><p class="note">Monday to Friday, 9:00 to 18:00 (PKT)</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TERMS ============ -->
+<div data-page="terms-of-service">
+  <article class="wrap narrow legal">
+    <span class="eyebrow">Legal</span>
+    <h1>Terms of Service</h1>
+    <p class="note">Last updated: November 2, 2026</p>
+    <h2>1. About us</h2>
+    <p>These terms are an agreement between you and Smaart Care, the business that owns and operates the website smaartcare.online under the brand Smaart Care Coloring Club ("we", "us"). Smaart Care runs a subscription service that gives members access to an online coloring portal with drawings for children. Our office is at Office 205, 2nd Floor, Akbar Arcade, Islamabad, Pakistan. You can reach us at support@smaartcare.online.</p>
+    <h2>2. Who can buy</h2>
+    <p>You must be at least 18 years old to buy a subscription. Subscriptions are bought by parents or guardians for use by children in their household. Children do not create accounts.</p>
+    <h2>3. Subscriptions and automatic renewal</h2>
+    <p>We offer 1-month ($35), 3-month ($100), 6-month ($180) and 12-month ($350) plans, priced in US dollars. Each plan renews automatically at the end of its billing period at the then-current price until you cancel. We will notify you by email before any price change takes effect.</p>
+    <p>The 6-month plan includes 1 bonus month and the 12-month plan includes 2 bonus months of access, added to the end of your first billing period.</p>
+    <h2>4. Payments</h2>
+    <p>Payments are handled by our authorised payment partner, which acts as the merchant of record and processes your card details securely. We never see or store your full card number. Applicable sales tax or VAT may be added at checkout.</p>
+    <h2>5. What you get</h2>
+    <p>Members get access to a personal online portal with a coloring studio and a library of drawings, with at least 50 new drawings added every month. Artwork your family saves is stored in your account while your subscription is active. Your login details are sent by email after payment.</p>
+    <h2>6. Cancellation</h2>
+    <p>You can cancel at any time from the "My subscription" section of your portal or by emailing support@smaartcare.online. Cancellation stops future renewals. You keep access until the end of the period you already paid for.</p>
+    <h2>7. License to use the drawings</h2>
+    <p>All drawings are owned by Smaart Care. We grant you a personal, non-transferable license to color them in the portal for your own household. You may not copy, extract, resell or distribute the drawings, or use them commercially, without our written permission.</p>
+    <h2>8. Your account</h2>
+    <p>Keep your login details private. One subscription covers one household. We may suspend accounts that share login details or misuse the service.</p>
+    <h2>9. Refunds</h2>
+    <p>Refunds are covered by our <a href="#refund-policy" data-route="refund-policy">Refund Policy</a>.</p>
+    <h2>10. Limitation of liability</h2>
+    <p>The service is provided "as is". To the extent permitted by law, our total liability for any claim is limited to the amount you paid in the 3 months before the claim. Nothing in these terms limits rights you have under consumer law in your country.</p>
+    <h2>11. Changes</h2>
+    <p>We may update these terms. If changes are significant we will email members before they take effect.</p>
+    <h2>12. Contact</h2>
+    <p>Questions about these terms: support@smaartcare.online.</p>
+  </article>
+</div>
+
+<!-- ============ PRIVACY ============ -->
+<div data-page="privacy-policy">
+  <article class="wrap narrow legal">
+    <span class="eyebrow">Legal</span>
+    <h1>Privacy Policy</h1>
+    <p class="note">Last updated: November 2, 2026</p>
+    <h2>What we collect</h2>
+    <ul>
+      <li>Your name and email address, to create your account and send your login details.</li>
+      <li>Subscription details such as plan, renewal date and payment status.</li>
+      <li>Artwork saved in the portal (the colors and brush strokes on each drawing, its score, and the name you give it).</li>
+      <li>Basic usage data such as login times, to keep the service working.</li>
+      <li>Messages you send us through the contact form or email.</li>
+    </ul>
+    <p>Card and billing details are collected and processed by our payment partner, not by us.</p>
+    <h2>Children's privacy</h2>
+    <p>Our service is purchased and managed by adults. Children use the portal under the parent's account and do not create profiles. We do not knowingly collect personal information from children under 13 (or under 16 in the UK). If you believe a child has given us personal information, contact us and we will delete it.</p>
+    <h2>How we use it</h2>
+    <p>To provide portal access, keep your saved artwork, send account and billing emails, answer support requests, prevent misuse and improve our drawings. We do not sell your personal information.</p>
+    <h2>Who we share it with</h2>
+    <p>Only with service providers that help us run the service, such as our payment partner, email delivery and hosting providers, and only as needed for those services.</p>
+    <h2>Cookies</h2>
+    <p>We use essential cookies to keep you logged in. We do not use advertising cookies.</p>
+    <h2>How long we keep it</h2>
+    <p>While your account is active and for up to 24 months afterwards, unless the law requires longer. Saved artwork is deleted 90 days after a subscription ends.</p>
+    <h2>Your rights</h2>
+    <p>Depending on where you live (including the UK, Canada and US states with privacy laws), you can ask to access, correct, export or delete your personal information. Email support@smaartcare.online and we will respond within 30 days.</p>
+    <h2>Contact</h2>
+    <p>Smaart Care (Smaart Care Coloring Club), Office 205, 2nd Floor, Akbar Arcade, Islamabad, Pakistan · support@smaartcare.online</p>
+  </article>
+</div>
+
+<!-- ============ REFUND ============ -->
+<div data-page="refund-policy">
+  <article class="wrap narrow legal">
+    <span class="eyebrow">Legal</span>
+    <h1>Refund Policy</h1>
+    <p class="note">Last updated: November 2, 2026</p>
+    <h2>3-day refund window</h2>
+    <p>You can request a full refund within 3 days of your first purchase or of any automatic renewal. After 3 days, payments for that billing period are non-refundable.</p>
+    <h2>How to request a refund</h2>
+    <p>Email support@smaartcare.online from the email address on your account with the subject "Refund request", or use the <a href="#contact" data-route="contact">contact form</a>. We process approved refunds within 5 business days to your original payment method. Your bank may take a few more days to show it.</p>
+    <h2>After a refund</h2>
+    <p>Your subscription is cancelled and portal access ends when the refund is issued.</p>
+    <h2>Cancelling without a refund</h2>
+    <p>You can cancel anytime to stop future renewals. You keep access until the end of the period you paid for.</p>
+    <h2>Questions</h2>
+    <p>Contact support@smaartcare.online. We reply within 1 business day.</p>
+  </article>
+</div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#home" data-route="home" style="font-size:1.25rem">Smaart Care</a>
+      <p class="note" style="margin:8px 0 12px;max-width:30em">Online coloring pages for kids aged 3 to 12, with new drawings every month. For families in the USA, UK and Canada.</p>
+      <address>Office 205, 2nd Floor, Akbar Arcade<br>Islamabad, Pakistan<br>support@smaartcare.online</address>
+    </div>
+    <div><h4>Site</h4><ul><li><a href="#home" data-route="home">Home</a></li><li><a href="#pricing" data-route="pricing">Pricing</a></li><li><a href="#login" data-route="login">Member login</a></li><li><a href="#contact" data-route="contact">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="#terms-of-service" data-route="terms-of-service">Terms of Service</a></li><li><a href="#privacy-policy" data-route="privacy-policy">Privacy Policy</a></li><li><a href="#refund-policy" data-route="refund-policy">Refund Policy</a></li></ul></div>
+    <p class="legalline">© 2026 Smaart Care · Coloring Club. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="mbox">
+    <h3 id="mTitle"></h3>
+    <p class="note" id="mText"></p>
+    <div class="field" id="mField"><label for="mInput">Name</label><input id="mInput" maxlength="40" autocomplete="off"></div>
+    <div class="mbtns" id="mBtns"></div>
+  </div>
+</div>
+<div class="celebrate" id="celebrate" hidden role="dialog" aria-modal="true" aria-labelledby="celTitle">
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <div class="cbox">
+    <div class="cstars" id="celStars"></div>
+    <p class="cscore"><b id="celScore">0</b><span>/10</span></p>
+    <h3 id="celTitle">Great job!</h3>
+    <p class="note" id="celText"></p>
+    <div class="mbtns" style="justify-content:center;margin-top:6px">
+      <button class="btn small" type="button" id="celKeep">Keep coloring</button>
+      <button class="btn primary small" type="button" id="celSave">Save with score</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+/* ============================================================
+   DEVELOPER NOTES
+   - PLANS: set paddlePriceId / polarProductId for each plan; startCheckout() opens Paddle/Polar.
+   - Payment webhook: create account, generate password, email login ID + password.
+   - Login: real auth + session check (replace `loggedIn`). Protect /portal and /admin.
+   - DRAWINGS: load from database. Each drawing = {id,name,cat,level,month,vb,parts:[[tag,attrs,refColor|'line']]}.
+     Admin upload parses the SVG into parts (see parseSvg) — store that JSON.
+   - ART (saved artwork): currently kept in this browser (localStorage) for the preview.
+     Replace loadArt()/persistArt() with API calls so artwork is saved per account.
+   - Clean URLs on live domain: /pricing/1-month, /pricing/3-months, /pricing/6-months, /pricing/12-months,
+     /login, /portal, /admin, /terms, /privacy, /refund, /contact (vercel.json rewrites to index.html).
+   ============================================================ */
+const PLANS = [
+  {id:'1-month',  name:'1 Month',   price:35,  renew:'Billed monthly. Auto-renews.',        bonus:null,             paddlePriceId:'', polarProductId:''},
+  {id:'3-months', name:'3 Months',  price:100, renew:'Billed every 3 months. Auto-renews.', bonus:null,             paddlePriceId:'', polarProductId:''},
+  {id:'6-months', name:'6 Months',  price:180, renew:'Billed every 6 months. Auto-renews.', bonus:'+1 month free',  paddlePriceId:'', polarProductId:''},
+  {id:'12-months',name:'12 Months', price:350, renew:'Billed yearly. Auto-renews.',         bonus:'+2 months free', paddlePriceId:'', polarProductId:'', best:true},
+];
+
+const PALETTE = ['#E53935','#FF7043','#FFB300','#FDD835','#C0CA33','#7CB342','#2E7D32','#00897B','#4FC3F7','#1E88E5','#3949AB','#8E24AA','#EC407A','#F8BBD0','#FFE0B2','#D7A86E','#8D6E63','#5D4037','#BDBDBD','#616161','#212121','#FFFFFF','#B3E5FC','#C8E6C9'];
+const CATS = ['Animals','Ocean','Sky','Nature','Vehicles','Toys','Food'];
+const LEVELS = ['Easy','Medium','Hard'];
+const CURRENT_MONTH = '2026-11'; // developer: use the current month
+
+/* ---------- shape helpers ---------- */
+const f1 = n => Math.round(n*10)/10;
+function scallop(cx,cy,r,n,k=1.22){let d='';for(let i=0;i<=n;i++){const a=i/n*2*Math.PI-Math.PI/2,x=cx+r*Math.cos(a),y=cy+r*Math.sin(a);if(!i){d+=`M${f1(x)} ${f1(y)}`;continue}const m=(i-.5)/n*2*Math.PI-Math.PI/2;d+=` Q${f1(cx+r*k*Math.cos(m))} ${f1(cy+r*k*Math.sin(m))} ${f1(x)} ${f1(y)}`}return d+'Z'}
+function star(cx,cy,r,inner=.45){let p=[];for(let i=0;i<10;i++){const a=i*Math.PI/5-Math.PI/2,rr=i%2?r*inner:r;p.push(f1(cx+rr*Math.cos(a))+','+f1(cy+rr*Math.sin(a)))}return p.join(' ')}
+const band=(cx,cy,ro,ri)=>`M${cx-ro} ${cy} A${ro} ${ro} 0 0 1 ${cx+ro} ${cy} H${cx+ri} A${ri} ${ri} 0 0 0 ${cx-ri} ${cy} Z`;
+
+/* ---------- drawing library: 50 subjects x Easy / Medium / Hard = 150 drawings ---------- */
+const RED='#E53935',ORG='#FF7043',AMB='#FFB300',YEL='#FDD835',LGR='#7CB342',GRN='#2E7D32',SKY='#4FC3F7',BLU='#1E88E5',IND='#3949AB',PUR='#8E24AA',PNK='#EC407A',LPK='#F8BBD0',PCH='#FFE0B2',TAN='#D7A86E',BRN='#8D6E63',DBR='#5D4037',GRY='#BDBDBD',DGR='#616161',BLK='#212121',WHT='#FFFFFF',PBL='#B3E5FC',MNT='#C8E6C9';
+const C=(cx,cy,r,c)=>['circle',{cx,cy,r},c];
+const E=(cx,cy,rx,ry,c,rot)=>['ellipse',rot?{cx,cy,rx,ry,transform:`rotate(${rot} ${cx} ${cy})`}:{cx,cy,rx,ry},c];
+const R=(x,y,width,height,c,rx)=>['rect',rx?{x,y,width,height,rx}:{x,y,width,height},c];
+const P=(d,c)=>['path',{d},c];
+const G=(points,c)=>['polygon',{points},c];
+const L=d=>['path',{d,fill:'none'},'line'];
+const BGR=c=>R(0,0,400,400,c);
+/* move a group so its base point (200,300) lands on (bx,by) at scale k */
+function place(parts,bx,by,k){
+  if (k===1 && bx===200 && by===300) return parts;
+  const t=`translate(${f1(bx-200*k)} ${f1(by-300*k)}) scale(${k})`;
+  return parts.map(p=>[p[0],{...p[1],transform:p[1].transform?`${t} ${p[1].transform}`:t},p[2]]);
+}
+const cloud=(x,y,k=1)=>P(`M${x} ${y} a${f1(22*k)} ${f1(22*k)} 0 0 1 ${f1(36*k)} ${f1(-16*k)} a${f1(30*k)} ${f1(30*k)} 0 0 1 ${f1(56*k)} ${f1(8*k)} a${f1(20*k)} ${f1(20*k)} 0 0 1 ${f1(2*k)} ${f1(38*k)} h${f1(-92*k)} a${f1(16*k)} ${f1(16*k)} 0 0 1 ${f1(-2*k)} ${f1(-30*k)} z`,WHT);
+const sun=(x,y,r=28)=>[C(x,y,r,YEL),L(`M${x} ${y-r-8} v-12 M${x+r+8} ${y} h12 M${x-r-8} ${y} h-12 M${x+r*.8} ${y-r*.8} l9 -9 M${x-r*.8} ${y-r*.8} l-9 -9 M${x+r*.8} ${y+r*.8} l9 9 M${x-r*.8} ${y+r*.8} l-9 9`)];
+const flower=(x,y,c)=>[L(`M${x} ${y} V${y-34}`),P(scallop(x,y-46,15,6),c),C(x,y-46,6,YEL)];
+const birds=(x,y)=>L(`M${x} ${y} q10 -10 20 0 q10 -10 20 0 M${x+50} ${y-18} q8 -8 16 0 q8 -8 16 0`);
+const tufts=(x,y)=>L(`M${x} ${y} l-6 -14 M${x+6} ${y} v-18 M${x+12} ${y} l6 -14`);
+const pine=(x,y,k=1)=>[R(x-6*k,y-20*k,12*k,20*k,BRN),G(`${x},${y-110*k} ${x+36*k},${y-55*k} ${x-36*k},${y-55*k}`,GRN),G(`${x},${y-80*k} ${x+46*k},${y-20*k} ${x-46*k},${y-20*k}`,GRN)];
+const twinkle=(pts,c=YEL,r=10)=>pts.map(([x,y])=>G(star(x,y,r),c));
+const bubbles=pts=>pts.map(([x,y,r])=>C(x,y,r,WHT));
+const balloon=(x,y,c)=>[L(`M${x} ${y+32} q-6 30 4 60`),E(x,y,24,30,c)];
+
+/* ---------- scenes (lvl 1 = Medium, lvl 2 = Hard) ---------- */
+const SCENES = {
+  land:{by:340, f:l=>({back:[BGR(PBL),...sun(335,62),cloud(30,92),...(l>1?[cloud(220,50,.8),birds(120,60)]:[]),P('M0 300 Q200 262 400 300 V400 H0 Z',LGR)],
+    front:l>1?[...flower(40,392,PNK),...flower(362,390,PUR),...flower(78,398,YEL),tufts(320,396)]:[tufts(40,394)]})},
+  farm:{by:340, f:l=>({back:[BGR(PBL),...sun(340,60),...(l>1?[cloud(30,70),R(16,196,76,90,RED),G('8,200 54,162 100,200',BRN),R(42,236,24,50,WHT)]:[]),
+    ...[20,90,160,230,300,370].map(x=>R(x,236,10,52,TAN)),R(0,248,400,8,TAN),R(0,268,400,8,TAN),P('M0 300 Q200 266 400 300 V400 H0 Z',LGR)],
+    front:l>1?[tufts(30,394),tufts(340,392),...flower(372,396,YEL)]:[]})},
+  pond:{by:338, f:l=>({back:[BGR(PBL),...(l>1?[...sun(60,60),cloud(260,60)]:[cloud(40,70)]),R(0,250,400,150,LGR),E(200,335,180,52,SKY),...(l>1?[E(56,348,24,8,GRN),E(346,330,22,8,GRN)]:[])],
+    front:l>1?[L('M20 300 v-50 M30 300 v-40 M380 300 v-46 M370 300 v-36'),E(20,250,4,12,BRN),E(380,254,4,12,BRN),...flower(330,392,PNK)]:[L('M20 300 v-44 M30 300 v-34')]})},
+  night:{by:330, f:l=>({back:[BGR(IND),C(335,70,26,PCH),...twinkle(l>1?[[50,60],[120,110],[260,40],[370,170],[40,220],[350,300],[90,330]]:[[60,70],[270,45],[360,190]]),...(l>1?[P('M0 345 Q200 305 400 345 V400 H0 Z',GRN)]:[])],front:[]})},
+  snow:{by:345, f:l=>({back:[BGR(PBL),...(l>1?[...sun(330,60),...pine(50,300,.9),...pine(355,300,1)]:[]),P('M0 300 Q200 268 400 300 V400 H0 Z',WHT),
+    ...twinkle(l>1?[[40,60],[130,40],[250,90],[90,140],[300,150],[200,30]]:[[60,70],[300,80],[150,40]],WHT,8)],front:[]})},
+  indoor:{by:345, f:l=>({back:[R(0,0,400,310,PCH),R(0,310,400,90,TAN),R(26,46,112,92,PBL),L('M82 46 V138 M26 92 H138'),E(200,352,165,30,PNK),
+    ...(l>1?[R(266,56,96,72,AMB),R(278,68,72,48,MNT),L('M0 340 H400 M0 372 H400'),R(300,190,70,10,BRN),R(310,166,16,24,RED),R(330,170,14,20,BLU),C(354,180,10,YEL)]:[])],front:[]})},
+  road:{by:352, f:l=>({back:[BGR(PBL),...(l>1?[R(8,130,62,140,GRY),R(76,172,52,98,AMB),R(282,150,50,120,SKY),R(338,110,56,160,PCH),
+      ...[[20,146],[44,146],[20,186],[44,186],[20,226],[44,226],[88,188],[108,188],[88,226],[108,226],[294,166],[314,166],[294,206],[314,206],[352,128],[374,128],[352,170],[374,170],[352,212],[374,212]].map(([x,y])=>R(x,y,14,20,WHT))]:[cloud(40,80),...sun(340,60)]),
+    R(0,270,400,50,LGR),R(0,320,400,80,DGR),R(20,356,60,10,WHT,3),R(170,356,60,10,WHT,3),R(320,356,60,10,WHT,3)],front:[]})},
+  sea:{by:330, f:l=>({back:[BGR(SKY),P('M0 342 Q100 322 200 342 T400 337 V400 H0 Z',PCH),
+    P('M40 345 Q22 300 44 270 Q62 240 46 210 Q74 240 60 270 Q48 300 64 345 Z',GRN),P('M340 345 Q322 305 342 280 Q358 255 344 230 Q370 255 358 280 Q346 305 362 345 Z',LGR),
+    ...bubbles(l>1?[[90,60,9],[110,90,6],[300,50,8],[320,80,5],[60,140,5]]:[[90,70,8],[110,100,5]]),
+    ...(l>1?[P('M130 400 Q140 360 170 360 Q200 360 210 400 Z',GRY),P(scallop(268,368,18,7),PNK),G(star(110,372,14,.5),ORG),P('M300 160 Q320 140 345 160 Q320 180 300 160 Z',YEL),G('345,160 362,148 362,172',YEL)]:[])],front:[]})},
+  surface:{by:318, f:l=>({back:[BGR(PBL),...sun(70,70),...(l>1?[cloud(250,70),cloud(130,130,.7),birds(290,140)]:[cloud(260,80)]),P('M0 290 Q50 275 100 290 T200 290 T300 290 T400 290 V400 H0 Z',BLU)],
+    front:l>1?[L('M20 345 q20 -12 40 0 q20 -12 40 0 M290 370 q20 -12 40 0 q20 -12 40 0'),P('M300 400 Q330 360 360 362 Q390 364 400 380 V400 Z',PCH)]:[L('M30 350 q20 -12 40 0')]})},
+  beach:{by:345, f:l=>({back:[BGR(PBL),...sun(330,60),R(0,226,400,50,SKY),P('M0 270 Q200 248 400 270 V400 H0 Z',PCH),
+    ...(l>1?[cloud(40,80),R(66,176,6,124,BRN),P('M8 190 Q69 126 130 190 Z',RED),P('M50 190 Q69 140 88 190 Z',WHT)]:[])],
+    front:l>1?[P('M330 380 h30 l-4 -28 h-22 z',BLU),L('M334 352 q11 -16 22 0'),P('M40 392 q10 -18 20 0 z',LPK),C(372,330,6,LPK)]:[P('M340 384 q10 -18 20 0 z',LPK)]})},
+  sky:{by:322, f:l=>({back:[BGR(PBL),cloud(26,300,1.1),cloud(272,80,.9),...(l>1?[...sun(60,60),birds(150,50),cloud(300,250,.7),P('M0 365 Q200 335 400 365 V400 H0 Z',LGR)]:[])],front:[]})},
+  party:{by:328, f:l=>({back:[R(0,0,400,300,LPK),R(0,300,400,100,TAN),L('M0 20 Q200 70 400 20'),
+    ...[[30,RED],[90,YEL],[150,BLU],[210,LGR],[270,PUR],[330,ORG]].map(([x,c],i)=>G(`${x},30 ${x+40},34 ${x+20},74`,c)),
+    ...(l>1?[...balloon(40,140,BLU),...balloon(362,130,YEL),C(90,200,5,YEL),C(320,220,5,BLU),C(140,110,5,LGR),C(270,120,5,RED)]:[])],front:[]})},
+};
+
+/* ---------- subjects: drawn around base point (200,300), lvl adds detail ---------- */
+const S_ = (cat,key,scene,names,easyBg,fn)=>({cat,key,scene,names,easyBg,fn});
+const SUBJECTS = [
+ // ANIMALS
+ S_('Animals','lion','land',['Lion','Lion on the Hill',"Lion's Sunny Day"],PCH,l=>[
+   P(scallop(200,175,105,14),ORG),C(200,180,76,AMB),E(200,215,38,26,PCH),
+   P('M187 197 H213 L200 212 Z',DBR),C(172,168,8,BLK),C(228,168,8,BLK),L('M188 228 Q200 237 212 228'),...(l>0?[C(176,214,3,DBR),C(224,214,3,DBR),C(182,222,3,DBR),C(218,222,3,DBR)]:[]),
+   ...(l>1?[E(152,196,10,7,LPK),E(248,196,10,7,LPK),P('M180 108 Q200 86 220 108 Q200 116 180 108 Z',ORG)]:[])]),
+ S_('Animals','cat','indoor',['Kitty Cat','Cat at Home','Cozy Cat Corner'],LPK,l=>[
+   P('M262 290 Q330 290 318 230 Q314 212 300 218 Q306 262 262 272 Z',ORG),E(200,250,70,52,ORG),E(176,296,20,10,ORG),E(224,296,20,10,ORG),
+   G('146,120 152,62 186,100',ORG),G('254,120 248,62 214,100',ORG),G('156,110 158,80 176,100',LPK),G('244,110 242,80 224,100',LPK),C(200,140,58,ORG),
+   C(180,135,7,BLK),C(220,135,7,BLK),G('194,152 206,152 200,160',PNK),L('M200 160 Q192 168 186 164 M200 160 Q208 168 214 164'),
+   ...(l>0?[L('M150 150 H176 M150 160 L176 156 M250 150 H224 M250 160 L224 156'),C(200,204,8,YEL)]:[]),
+   ...(l>1?[L('M150 238 Q160 245 152 258 M250 238 Q240 245 248 258'),C(300,286,14,RED),L('M286 286 q14 -8 28 0')]:[])]),
+ S_('Animals','dog','land',['Puppy','Puppy in the Garden',"Puppy's Playtime"],MNT,l=>[
+   P('M268 238 Q300 210 296 190 Q286 214 262 228 Z',TAN),E(200,250,72,50,TAN),R(150,262,26,38,TAN,8),R(224,262,26,38,TAN,8),
+   ...(l>0?[E(232,242,18,14,BRN)]:[]),C(200,140,56,TAN),E(200,164,26,20,PCH),E(200,154,10,7,BLK),C(180,128,7,BLK),C(220,128,7,BLK),L('M200 161 V170 M190 172 Q200 178 210 172'),
+   E(144,140,20,44,BRN,15),E(256,140,20,44,BRN,-15),...(l>1?[R(166,190,68,12,RED,6),C(200,206,7,YEL),C(110,290,14,PNK)]:[])]),
+ S_('Animals','bunny','land',['Bunny','Bunny in the Meadow',"Bunny's Carrot Picnic"],LPK,l=>[
+   C(258,268,14,WHT),E(176,80,14,46,WHT),E(224,80,14,46,WHT),E(176,82,7,34,LPK),E(224,82,7,34,LPK),E(200,250,62,52,WHT),E(166,296,24,10,WHT),E(234,296,24,10,WHT),
+   C(200,160,50,WHT),C(182,152,6,BLK),C(218,152,6,BLK),E(200,170,7,5,PNK),L('M200 175 V182 M192 184 Q200 188 208 184'),
+   ...(l>0?[E(166,182,8,4,LPK),E(234,182,8,4,LPK)]:[]),...(l>1?[G('258,256 304,206 280,266',ORG),P('M300 210 Q306 188 318 192 Q310 202 304 212 Z',LGR),L('M268 244 l10 4 M276 234 l10 4')]:[])]),
+ S_('Animals','elephant','land',['Elephant','Elephant Walk','Elephant Parade'],PBL,l=>[
+   L('M290 230 Q306 240 300 256'),E(210,240,90,58,GRY),...(l>1?[P('M196 186 H276 L268 236 H204 Z',PUR),R(196,226,80,8,YEL)]:[]),
+   R(140,250,30,50,GRY,8),R(186,262,28,38,GRY,8),R(236,262,28,38,GRY,8),R(270,250,30,50,GRY,8),...(l>0?[E(155,298,10,4,WHT),E(285,298,10,4,WHT)]:[]),
+   E(160,178,32,42,GRY),...(l>0?[E(162,180,18,26,LPK)]:[]),P('M100 196 Q84 240 102 270 Q112 276 116 266 Q104 240 120 206 Z',GRY),C(132,180,48,GRY),C(118,170,6,BLK),P('M108 214 Q102 232 114 234 Q116 222 118 214 Z',WHT)]),
+ S_('Animals','pig','farm',['Piggy','Piggy on the Farm','Piggy Farm Day'],LPK,l=>[
+   L('M284 236 q14 -6 8 -14 q-10 -6 -4 -16'),E(200,245,85,55,LPK),R(140,270,24,30,LPK,6),R(180,276,24,24,LPK,6),R(216,276,24,24,LPK,6),R(256,270,24,30,LPK,6),
+   ...(l>1?[E(250,250,14,9,BRN),E(160,262,10,7,BRN)]:[]),G('160,130 156,100 182,122',PNK),G('240,130 244,100 218,122',PNK),C(200,170,52,LPK),E(200,184,22,15,PNK),
+   E(193,184,3,5,DBR),E(207,184,3,5,DBR),C(182,158,6,BLK),C(218,158,6,BLK),...(l>0?[C(168,190,7,PNK),C(232,190,7,PNK)]:[])]),
+ S_('Animals','owl','night',['Owl','Owl at Night','Owl and the Stars'],PBL,l=>[
+   R(70,294,260,12,BRN,6),...(l>1?[P('M70 300 Q50 286 40 300 Q50 314 70 300 Z',LGR),P('M330 300 Q350 286 360 300 Q350 314 330 300 Z',LGR)]:[]),
+   G('140,140 150,96 172,128',BRN),G('260,140 250,96 228,128',BRN),E(200,210,72,90,BRN),E(200,235,46,58,PCH),
+   ...(l>0?[L('M180 230 q10 8 20 0 q10 8 20 0 M180 255 q10 8 20 0 q10 8 20 0')]:[]),
+   P('M130 200 Q110 250 150 286 Q142 240 150 200 Z',DBR),P('M270 200 Q290 250 250 286 Q258 240 250 200 Z',DBR),
+   C(174,170,24,WHT),C(226,170,24,WHT),C(176,172,10,BLK),C(224,172,10,BLK),G('192,192 208,192 200,206',AMB),E(184,296,10,5,ORG),E(216,296,10,5,ORG)]),
+ S_('Animals','chick','farm',['Little Chick','Chick on the Farm','Chick Hatching Day'],YEL,l=>[
+   C(200,230,70,YEL),E(244,236,24,34,AMB,-20),C(200,150,46,YEL),G('190,156 210,156 200,170',ORG),C(184,142,6,BLK),C(216,142,6,BLK),L('M196 104 q-6 -14 4 -18 M204 104 q6 -14 -4 -18'),
+   ...(l>0?[C(172,160,7,LPK),C(228,160,7,LPK)]:[]),...(l>1?[P('M130 266 L148 248 L166 266 L184 246 L202 266 L220 248 L238 266 L256 248 L272 266 V300 H130 Z',WHT)]:[L('M180 300 v-10 M170 300 h20 M220 300 v-10 M210 300 h20')])]),
+ S_('Animals','duck','pond',['Ducky','Duck on the Pond','Duck Pond Party'],PBL,l=>[
+   G('284,236 314,214 300,256',YEL),E(205,250,92,48,YEL),P('M205 236 Q245 218 276 246 Q240 264 205 252 Z',AMB),C(150,180,40,YEL),E(112,188,22,10,ORG),C(150,172,6,BLK),
+   ...(l>0?[C(160,192,6,LPK)]:[]),...(l>1?[P('M130 146 Q150 118 172 146 Z',BLU),R(124,142,54,8,BLU,4),R(144,214,14,20,RED,3)]:[])]),
+ S_('Animals','frog','pond',['Froggy','Frog on a Lily Pad','Frog Pond Jump'],MNT,l=>[
+   ...(l>0?[E(200,298,120,16,GRN)]:[]),C(160,170,26,LGR),C(240,170,26,LGR),E(200,240,80,58,LGR),...(l>0?[E(200,262,44,30,MNT)]:[]),
+   ...(l>1?[C(176,212,7,GRN),C(228,206,6,GRN),C(246,238,5,GRN),C(150,240,5,GRN)]:[]),E(140,288,34,14,LGR),E(260,288,34,14,LGR),
+   C(160,168,15,WHT),C(240,168,15,WHT),C(160,170,7,BLK),C(240,170,7,BLK),L('M150 228 Q200 260 250 228')]),
+ S_('Animals','penguin','snow',['Penguin','Penguin in the Snow','Penguin Winter Fun'],PBL,l=>[
+   E(132,220,14,48,BLK,15),E(268,220,14,48,BLK,-15),E(200,210,70,92,BLK),E(200,226,48,72,WHT),C(184,160,11,WHT),C(216,160,11,WHT),C(185,161,5,BLK),C(215,161,5,BLK),
+   G('190,176 210,176 200,190',AMB),E(182,300,16,7,ORG),E(218,300,16,7,ORG),
+   ...(l>0?[P('M240 196 L270 236 L240 228 Z',RED),R(152,186,96,14,RED,7)]:[]),...(l>1?[P('M150 136 Q200 70 250 136 Z',BLU),R(146,128,108,14,WHT,7),C(200,80,10,WHT)]:[])]),
+ S_('Animals','butterfly','land',['Butterfly','Butterfly in the Garden','Butterfly Flower Party'],PBL,l=>[
+   P('M196 190 C150 90, 60 70, 60 140 C60 190, 120 210, 196 200 Z',PUR),P('M204 190 C250 90, 340 70, 340 140 C340 190, 280 210, 204 200 Z',PUR),
+   P('M196 205 C130 210, 80 250, 110 300 C140 330, 190 280, 196 215 Z',PNK),P('M204 205 C270 210, 320 250, 290 300 C260 330, 210 280, 204 215 Z',PNK),
+   C(115,140,18,YEL),C(285,140,18,YEL),...(l>0?[C(132,268,12,SKY),C(268,268,12,SKY)]:[]),...(l>1?[C(160,110,9,ORG),C(240,110,9,ORG),C(150,172,7,ORG),C(250,172,7,ORG)]:[]),
+   E(200,212,12,70,DBR),C(200,132,16,DBR),L('M194 120 Q180 92 166 82 M206 120 Q220 92 234 82'),C(164,80,7,BLK),C(236,80,7,BLK)]),
+ S_('Animals','bee','land',['Busy Bee','Bee in the Garden','Bee and the Big Flower'],YEL,l=>[
+   ...(l>1?[R(196,240,8,60,LGR),P(scallop(200,236,30,8),PNK),C(200,236,12,YEL)]:[]),
+   E(196,140,26,36,PBL,-20),E(232,142,24,32,PBL,20),G('266,196 292,192 266,210',BLK),E(200,200,70,50,YEL),
+   P('M176 154 Q166 200 176 246 L196 250 Q186 200 196 150 Z',BLK),P('M222 152 Q212 200 222 248 L240 242 Q230 200 238 158 Z',BLK),
+   C(126,198,32,BLK),C(116,190,7,WHT),C(117,191,3,BLK),L('M116 170 Q104 146 92 144 M128 168 Q126 140 114 130'),...(l>0?[E(106,212,6,4,PNK)]:[])]),
+ S_('Animals','snail','land',['Snail','Snail on the Grass','Snail Rainy Day'],MNT,l=>[
+   P('M90 300 Q84 262 110 240 Q132 224 146 250 L156 278 H296 Q306 300 288 300 Z',LGR),C(220,218,62,ORG),
+   L('M220 218 m-8 0 a8 8 0 1 1 16 0 a16 16 0 1 1 -32 0 a26 26 0 1 1 52 0 a36 36 0 1 1 -72 0'),L('M112 242 L100 200 M126 238 L130 196'),C(100,196,7,LGR),C(130,192,7,LGR),
+   L('M112 268 q8 6 16 0'),...(l>0?[C(192,186,7,YEL),C(254,250,7,YEL)]:[]),...(l>1?[P('M150 120 Q220 60 290 120 Z',BLU),R(218,120,4,40,DGR)]:[])]),
+ S_('Animals','ladybug','land',['Ladybug','Ladybug on a Leaf','Ladybug Garden Walk'],MNT,l=>[
+   ...(l>0?[P('M60 300 Q200 230 340 300 Q200 330 60 300 Z',LGR)]:[]),C(200,138,36,BLK),C(200,220,80,RED),L('M200 142 V300'),
+   C(166,196,12,BLK),C(236,196,12,BLK),C(160,250,12,BLK),C(240,250,12,BLK),...(l>1?[C(186,276,8,BLK),C(214,276,8,BLK),C(200,170,6,BLK)]:[]),
+   C(186,130,7,WHT),C(214,130,7,WHT),L('M188 106 Q178 84 166 80 M212 106 Q222 84 234 80')]),
+ // OCEAN
+ S_('Ocean','fish','sea',['Happy Fish','Fish Under the Sea','Fish Reef Party'],SKY,l=>[
+   P('M268 190 L330 145 Q320 190 330 235 Z',ORG),P('M150 136 Q190 90 236 134 Z',ORG),E(190,190,96,64,AMB),...(l>0?[P('M210 130 Q228 190 210 250 L234 245 Q250 190 234 135 Z',RED)]:[]),
+   ...(l>1?[C(170,160,6,YEL),C(160,214,5,YEL),C(270,190,5,YEL)]:[]),P('M178 202 Q200 232 224 206 Q202 196 178 202 Z',ORG),C(136,176,15,WHT),C(140,176,7,BLK),L('M108 210 Q120 220 134 214')]),
+ S_('Ocean','whale','sea',['Big Whale','Whale Under the Waves','Whale Ocean Adventure'],SKY,l=>[
+   P('M80 220 Q80 140 190 140 Q290 140 300 210 Q330 190 344 160 Q350 210 320 240 Q290 280 190 280 Q80 280 80 220 Z',BLU),
+   P('M96 240 Q120 276 190 278 Q260 278 292 246 Q240 262 190 262 Q130 262 96 240 Z',PBL),C(130,200,7,BLK),L('M100 232 q14 10 30 4'),E(200,244,26,12,BLU,30),
+   L('M180 138 Q170 110 150 100 M190 136 V96 M200 138 Q210 110 230 100'),...(l>0?[C(150,96,6,PBL),C(230,98,6,PBL)]:[]),...(l>1?[C(244,164,7,PBL),C(272,178,5,PBL),E(124,222,8,4,LPK)]:[])]),
+ S_('Ocean','octopus','sea',['Octopus','Octopus on the Sea Floor','Octopus Ocean Dance'],SKY,l=>[
+   ...[122,160,198,236].map(x=>P(`M${x} 180 C${x-10} 230 ${x+20} 250 ${x+4} 296 Q${x+16} 300 ${x+24} 292 C${x+40} 250 ${x+12} 230 ${x+30} 180 Z`,PUR)),
+   ...(l>0?[C(130,250,4,LPK),C(170,262,4,LPK),C(210,250,4,LPK),C(250,262,4,LPK)]:[]),P('M120 190 Q120 90 200 90 Q280 90 280 190 Z',PUR),
+   ...(l>1?[C(160,112,8,PNK),C(240,116,6,PNK),C(200,104,5,PNK)]:[]),C(170,150,12,WHT),C(230,150,12,WHT),C(171,152,5,BLK),C(229,152,5,BLK),L('M186 172 q14 10 28 0'),...(l>0?[E(150,174,8,4,LPK),E(250,174,8,4,LPK)]:[])]),
+ S_('Ocean','crab','beach',['Crab','Crab on the Beach','Crab Sandcastle Day'],PCH,l=>[
+   L('M130 210 L110 190 M270 210 L290 190 M128 240 l-34 16 M130 258 l-30 24 M272 240 l34 16 M270 258 l30 24'),C(100,172,26,RED),C(300,172,26,RED),G('96,148 106,170 80,160',WHT),G('304,148 294,170 320,160',WHT),
+   E(200,230,80,52,RED),L('M180 180 V150 M220 180 V150'),C(180,144,10,WHT),C(220,144,10,WHT),C(180,146,4,BLK),C(220,146,4,BLK),L('M184 236 q16 12 32 0'),
+   ...(l>0?[C(166,212,6,ORG),C(234,212,6,ORG)]:[]),...(l>1?[C(200,200,5,ORG),C(150,236,5,ORG),C(250,236,5,ORG)]:[])]),
+ S_('Ocean','jellyfish','sea',['Jellyfish','Jellyfish Float','Jellyfish Glow Party'],SKY,l=>[
+   L('M140 206 q-10 20 0 40 q10 20 0 40 M175 210 q10 20 0 40 q-10 20 0 40 M225 210 q-10 20 0 40 q10 20 0 40 M260 206 q10 20 0 40 q-10 20 0 40'),
+   ...(l>1?[P('M192 212 Q182 250 196 296 L206 296 Q194 250 206 212 Z',PUR)]:[]),
+   P('M120 200 Q120 100 200 100 Q280 100 280 200 Q260 210 240 200 Q220 212 200 200 Q180 212 160 200 Q140 210 120 200 Z',PNK),
+   ...(l>0?[E(146,150,9,5,LPK),E(254,150,9,5,LPK),E(200,120,10,5,LPK)]:[]),C(176,160,7,BLK),C(224,160,7,BLK),L('M190 176 q10 8 20 0')]),
+ S_('Ocean','starfish','beach',['Starfish','Starfish on the Sand','Starfish Beach Day'],PCH,l=>[
+   G(star(200,205,100,.5),ORG),C(184,190,8,BLK),C(216,190,8,BLK),L('M188 214 q12 10 24 0'),
+   ...(l>0?[C(200,138,6,YEL),C(262,186,6,YEL),C(240,262,6,YEL),C(160,262,6,YEL),C(138,186,6,YEL)]:[]),...(l>1?[C(172,206,6,LPK),C(228,206,6,LPK),C(200,236,5,YEL)]:[])]),
+ S_('Ocean','turtle','beach',['Turtle','Turtle on the Beach','Turtle Seaside Stroll'],MNT,l=>[
+   G('104,240 80,256 104,256',LGR),E(140,272,20,26,LGR),E(262,272,20,26,LGR),C(310,226,28,LGR),C(318,218,5,BLK),L('M312 238 q8 6 16 0'),
+   P('M110 250 Q120 150 200 148 Q280 150 290 250 Z',GRN),G(star(200,200,30,1),LGR),
+   ...(l>0?[P('M128 236 Q132 200 160 186 L170 222 Z',LGR),P('M272 236 Q268 200 240 186 L230 222 Z',LGR)]:[]),R(104,244,192,16,LGR,8),...(l>1?[C(324,232,5,LPK)]:[])]),
+ S_('Ocean','boat','surface',['Sail Boat','Boat on the Waves','Boat Sailing Day'],PBL,l=>[
+   R(196,70,8,170,BRN),G('204,76 204,226 312,226',WHT),...(l>1?[P('M204 150 L257 150 L269 166 L204 166 Z',YEL)]:[]),G('196,100 196,226 112,226',PNK),G('204,70 204,50 236,60',RED),
+   P('M90 236 H310 L282 290 H118 Z',RED),...(l>1?[P('M100 250 H300 L295 258 H105 Z',WHT)]:[]),...(l>0?[C(160,272,8,WHT),C(205,272,8,WHT),C(250,272,8,WHT)]:[])]),
+ S_('Ocean','submarine','sea',['Submarine','Submarine Dive','Submarine Deep Sea Trip'],SKY,l=>[
+   G('318,220 342,194 342,246',ORG),L('M232 128 V100 H252'),R(180,128,70,46,YEL,8),P('M90 220 Q90 170 150 170 H270 Q320 170 320 220 Q320 270 270 270 H150 Q90 270 90 220 Z',YEL),
+   ...(l>0?[C(150,220,22,GRY),C(200,220,22,GRY),C(250,220,22,GRY)]:[]),C(150,220,15,PBL),C(200,220,15,PBL),C(250,220,15,PBL),...(l>1?[R(100,250,210,8,RED,4),C(70,180,8,WHT),C(56,150,5,WHT)]:[])]),
+ // SKY
+ S_('Sky','rocket','night',['Rocket','Rocket to the Moon','Rocket Space Ride'],PBL,l=>[
+   P('M176 298 Q200 386 224 298 Z',ORG),...(l>0?[P('M188 298 Q200 352 212 298 Z',YEL)]:[]),P('M170 236 L128 304 L172 292 Z',RED),P('M230 236 L272 304 L228 292 Z',RED),
+   P('M200 60 C 250 100, 245 230, 232 300 H168 C 155 230, 150 100, 200 60 Z',WHT),P('M200 60 C 222 76, 232 98, 238 120 H162 C 168 98, 178 76, 200 60 Z',RED),
+   C(200,178,32,GRY),C(200,178,22,SKY),R(194,244,12,56,RED,4),...(l>1?[R(164,136,72,8,BLU),C(184,222,5,BLU),C(216,222,5,BLU)]:[])].map(p=>p)),
+ S_('Sky','airplane','sky',['Airplane','Airplane in the Clouds','Airplane Sky Trip'],PBL,l=>[
+   P('M190 195 L230 195 L200 150 L176 150 Z',BLU),P('M96 190 L74 130 H104 L134 186 Z',RED),
+   P('M70 210 Q70 182 110 182 H290 Q330 182 342 202 Q330 222 290 224 H110 Q70 224 70 210 Z',WHT),P('M300 184 Q334 188 342 202 Q334 216 300 222 Z',RED),
+   ...(l>0?[C(150,200,7,PBL),C(180,200,7,PBL),C(210,200,7,PBL),C(240,200,7,PBL),C(270,200,7,PBL)]:[]),...(l>1?[R(110,212,186,6,RED)]:[]),P('M170 208 L240 208 L190 270 L150 270 Z',BLU)]),
+ S_('Sky','hot-air-balloon','sky',['Hot Air Balloon','Balloon in the Sky','Balloon Sky Festival'],PBL,l=>[
+   P('M200 60 C280 60 300 140 270 190 L236 236 H164 L130 190 C100 140 120 60 200 60 Z',RED),P('M200 60 C230 70 236 150 220 236 H180 C164 150 170 70 200 60 Z',YEL),
+   ...(l>0?[P('M200 60 C214 70 216 150 208 236 H192 C184 150 186 70 200 60 Z',ORG)]:[]),...(l>1?[R(160,222,80,14,BLU,4)]:[]),
+   L('M166 236 L176 262 M234 236 L224 262'),R(170,262,60,38,TAN,6),...(l>0?[L('M170 278 H230 M190 262 V300 M210 262 V300')]:[])]),
+ S_('Sky','kite','sky',['Kite','Kite in the Wind','Kite Flying Day'],PBL,l=>[
+   L('M200 250 Q180 270 200 290 Q220 310 200 330'),G('200,60 280,160 200,160',PNK),G('200,60 120,160 200,160',YEL),G('120,160 200,250 200,160',SKY),G('280,160 200,250 200,160',LGR),
+   ...(l>0?[G('186,276 200,282 186,290',RED),G('214,276 200,282 214,290',RED),G('186,306 200,312 186,320',BLU),G('214,306 200,312 214,320',BLU)]:[]),
+   ...(l>1?[C(176,136,7,BLK),C(224,136,7,BLK),L('M184 172 q16 12 32 0')]:[])]),
+ S_('Sky','balloons','party',['Balloons','Balloon Bunch','Birthday Balloons'],LPK,l=>[
+   L('M150 190 Q160 240 200 300 M250 180 Q240 240 200 300 M200 160 V300'+(l>1?' M110 236 Q140 270 200 300 M290 236 Q260 270 200 300':'')),
+   ...(l>1?[E(110,200,30,38,PUR),E(290,200,30,38,LGR)]:[]),E(200,110,40,50,YEL),E(150,140,40,50,RED),E(250,130,40,50,BLU),
+   G('146,188 154,188 150,196',RED),G('246,178 254,178 250,186',BLU),...(l>0?[E(136,120,8,14,WHT,30),E(236,110,8,14,WHT,30),E(186,90,8,14,WHT,30)]:[])]),
+ S_('Sky','rainbow','sky',['Rainbow','Rainbow and Clouds','Rainbow Sunny Sky'],PBL,l=>[
+   P(band(200,300,180,152),RED),P(band(200,300,152,124),ORG),P(band(200,300,124,96),YEL),P(band(200,300,96,68),LGR),P(band(200,300,68,40),BLU),
+   ...(l>0?[P(band(200,300,40,22),PUR)]:[]),P('M0 320 a30 30 0 0 1 36 -38 a42 42 0 0 1 78 4 a30 30 0 0 1 18 50 Z',WHT),P('M400 320 a30 30 0 0 0 -36 -38 a42 42 0 0 0 -78 4 a30 30 0 0 0 -18 50 Z',WHT),
+   ...(l>1?[C(60,300,4,BLK),C(84,300,4,BLK),L('M62 314 q10 8 20 0'),C(316,300,4,BLK),C(340,300,4,BLK),L('M318 314 q10 8 20 0')]:[])]),
+ S_('Sky','moon','night',['Sleepy Moon','Moon and Stars','Moon Bedtime Story'],PBL,l=>[
+   P('M230 70 A115 115 0 1 0 230 300 A140 140 0 0 1 230 70 Z',YEL),L('M150 160 q10 8 20 0 M150 220 q16 14 32 0'),G(star(300,130,30),YEL),
+   ...(l>0?[G(star(320,230,18),YEL),C(150,192,8,LPK)]:[]),...(l>1?[P('M150 96 Q200 40 240 76 L200 110 Z',BLU),C(244,72,10,WHT),G(star(90,80,14),YEL)]:[])]),
+ // NATURE
+ S_('Nature','apple-tree','land',['Apple Tree','Apple Tree on the Hill','Apple Picking Day'],MNT,l=>[
+   R(178,190,44,110,BRN),...(l>1?[E(200,240,8,12,DBR)]:[]),P(scallop(200,140,95,9),GRN),C(160,130,13,RED),C(232,108,13,RED),C(218,176,13,RED),
+   ...(l>0?[C(150,182,13,RED),C(258,150,13,RED)]:[]),...(l>1?[C(186,96,12,RED),R(240,270,50,30,TAN,4),C(256,266,10,RED),C(274,266,10,RED)]:[])]),
+ S_('Nature','pine-tree','snow',['Pine Tree','Pine Tree in the Snow','Holiday Tree'],MNT,l=>[
+   R(186,260,28,40,BRN),G('200,160 310,268 90,268',GRN),G('200,110 290,210 110,210',GRN),G('200,60 270,150 130,150',GRN),
+   ...(l>0?[G(star(200,58,20),YEL)]:[]),...(l>1?[C(160,240,8,RED),C(240,236,8,BLU),C(200,190,8,YEL),C(150,186,7,PNK),C(250,180,7,RED),C(200,130,7,BLU),R(110,280,40,24,RED,3),R(250,282,36,22,BLU,3)]:[])]),
+ S_('Nature','sunflower','land',['Sunflower','Sunflower in the Garden','Sunflower Summer Day'],MNT,l=>[
+   R(194,170,12,130,LGR),P('M200 240 Q160 220 140 240 Q170 262 200 250 Z',LGR),P('M200 220 Q240 200 260 220 Q230 242 200 230 Z',LGR),
+   P(scallop(200,130,62,14,1.35),YEL),C(200,130,36,BRN),...(l>0?[C(188,120,4,DBR),C(212,120,4,DBR),C(200,140,4,DBR),C(186,142,4,DBR),C(214,142,4,DBR)]:[]),
+   ...(l>1?[C(160,236,8,RED),L('M160 228 V244'),C(248,222,6,PNK)]:[])]),
+ S_('Nature','tulips','indoor',['Tulip Pot','Tulips by the Window','Tulip Garden Shelf'],LPK,l=>[
+   L('M200 200 V110 M200 200 Q160 160 140 132 M200 200 Q240 160 260 132'),P('M200 175 Q170 165 165 142 Q192 144 200 175 Z',LGR),P('M200 175 Q230 165 235 142 Q208 144 200 175 Z',LGR),
+   P('M186 110 Q184 80 190 70 L200 84 L210 70 Q216 80 214 110 Q200 120 186 110 Z',RED),P('M126 132 Q124 102 130 92 L140 106 L150 92 Q156 102 154 132 Q140 142 126 132 Z',YEL),
+   P('M246 132 Q244 102 250 92 L260 106 L270 92 Q276 102 274 132 Q260 142 246 132 Z',PUR),P('M140 208 H260 L245 300 H155 Z',ORG),R(130,192,140,26,RED,6),
+   ...(l>0?[C(180,250,8,YEL),C(220,250,8,YEL)]:[]),...(l>1?[C(200,276,6,YEL),C(160,276,5,YEL),C(240,276,5,YEL)]:[])]),
+ S_('Nature','cactus','indoor',['Cactus','Cactus on the Shelf','Blooming Cactus'],MNT,l=>[
+   P('M170 180 H140 Q126 180 126 166 V140 Q126 128 138 128 Q150 128 150 140 V160 H170 Z',LGR),P('M230 160 H250 V120 Q250 108 262 108 Q274 108 274 120 V156 Q274 176 254 176 H230 Z',LGR),
+   R(170,110,60,140,LGR,30),...(l>0?[L('M186 140 l-6 -4 M214 160 l6 -4 M190 190 l-6 -4 M212 214 l6 -4 M138 150 l-6 0 M262 130 l6 0')]:[]),
+   ...(l>1?[P(scallop(200,108,16,6),PNK),C(200,108,6,YEL)]:[]),P('M140 240 H260 L245 300 H155 Z',ORG),R(132,228,136,22,TAN,6),...(l>0?[C(200,270,8,YEL)]:[])]),
+ S_('Nature','mushroom','land',['Mushroom','Mushroom in the Forest','Mushroom Fairy House'],MNT,l=>[
+   ...(l>1?[R(282,260,16,40,PCH),P('M256 262 Q256 230 290 230 Q324 230 324 262 Z',ORG)]:[]),P('M160 200 H240 Q248 260 236 300 H164 Q152 260 160 200 Z',PCH),
+   P('M100 200 Q100 100 200 100 Q300 100 300 200 Z',RED),C(160,150,14,WHT),C(220,130,12,WHT),C(260,170,10,WHT),...(l>0?[C(130,186,8,WHT)]:[]),
+   ...(l>1?[R(186,250,28,50,BRN,12),C(180,226,10,PBL),C(220,226,10,PBL)]:(l>0?[C(186,236,5,BLK),C(214,236,5,BLK),L('M190 254 q10 8 20 0')]:[]))]),
+ S_('Nature','house','land',['Little House','House on the Hill','House Garden Day'],PBL,l=>[
+   R(240,110,26,60,BRN),R(110,190,180,110,SKY,4),P('M94 196 L200 100 L306 196 Z',RED),R(180,232,40,68,AMB,3),R(126,212,32,32,WHT),R(242,212,32,32,WHT),
+   ...(l>0?[L('M142 212 V244 M126 228 H158 M258 212 V244 M242 228 H274'),C(212,268,3,BLK)]:[]),
+   ...(l>1?[C(200,160,14,YEL),R(122,244,40,10,BRN),C(130,240,5,PNK),C(142,240,5,YEL),C(154,240,5,PNK),R(238,244,40,10,BRN),C(246,240,5,PUR),C(258,240,5,YEL),C(270,240,5,PUR)]:[])]),
+ S_('Nature','snowman','snow',['Snowman','Snowman in the Snow','Snowman Winter Party'],PBL,l=>[
+   L('M156 160 L110 130 M244 160 L290 130 M120 136 l-10 -12 M280 136 l10 -12'),C(200,250,62,WHT),C(200,160,46,WHT),C(200,94,34,WHT),
+   R(170,40,60,40,BLK),R(160,76,80,10,BLK),...(l>1?[R(170,66,60,8,RED),C(110,130,9,BLU),C(290,130,9,BLU)]:[]),
+   C(188,88,4,BLK),C(212,88,4,BLK),G('200,98 230,104 200,110',ORG),L('M190 116 q10 6 20 0'),C(200,150,5,BLK),C(200,172,5,BLK),...(l>0?[C(200,240,5,BLK),R(166,120,68,14,RED,7),P('M214 126 L226 160 L210 158 Z',RED)]:[])]),
+ // VEHICLES
+ S_('Vehicles','car','road',['Toy Car','Car on the Road','Car City Drive'],PCH,l=>[
+   ...(l>1?[R(186,104,64,24,AMB,4),R(170,126,100,10,DGR,3)]:[]),
+   P('M60 266 V218 Q60 198 80 195 L120 190 L150 148 Q158 136 172 136 H262 Q278 136 288 148 L318 190 L340 194 Q360 198 360 218 V266 Z',RED),
+   P('M130 190 L157 154 H210 V190 Z',SKY),P('M222 190 V154 H260 Q270 154 276 162 L300 190 Z',SKY),C(344,222,8,YEL),...(l>1?[R(64,230,292,10,WHT)]:[]),
+   ...(l>0?[L('M216 194 V258'),R(226,206,14,5,DGR)]:[]),C(120,268,32,BLK),C(290,268,32,BLK),C(120,268,13,GRY),C(290,268,13,GRY)]),
+ S_('Vehicles','bus','road',['School Bus','Bus on the Road','Bus City Trip'],PCH,l=>[
+   R(50,130,300,140,YEL,16),R(70,150,50,44,PBL,6),R(130,150,50,44,PBL,6),R(190,150,50,44,PBL,6),R(256,150,44,100,PBL,4),
+   ...(l>0?[R(50,214,206,12,ORG)]:[]),C(336,240,8,WHT),...(l>1?[R(46,256,308,10,GRY,5),R(352,150,8,30,DGR),L('M278 150 V250')]:[]),
+   C(110,272,30,BLK),C(290,272,30,BLK),C(110,272,12,GRY),C(290,272,12,GRY)]),
+ S_('Vehicles','truck','road',['Truck','Truck on the Highway','Truck Delivery Day'],PCH,l=>[
+   R(50,110,200,150,BLU,8),P('M250 160 H310 Q340 160 350 200 V260 H250 Z',RED),P('M262 172 H306 Q326 172 334 204 H262 Z',PBL),
+   ...(l>0?[C(344,236,7,YEL)]:[]),...(l>1?[G(star(150,185,32),YEL),R(60,120,180,10,SKY)]:[]),
+   C(100,272,30,BLK),C(180,272,30,BLK),C(310,272,30,BLK),C(100,272,12,GRY),C(180,272,12,GRY),C(310,272,12,GRY)]),
+ S_('Vehicles','train','road',['Train','Train Ride','Train Through Town'],PCH,l=>[
+   ...(l>0?[cloud(250,80,.7),cloud(300,50,.5)]:[]),R(262,110,46,14,BLK,4),R(270,120,30,52,BLK),R(150,170,170,100,RED,6),R(70,120,100,150,BLU,6),R(92,140,56,44,PBL,4),
+   ...(l>1?[R(150,200,170,10,YEL),C(326,200,8,YEL)]:[]),G('320,250 352,282 320,282',GRY),C(110,278,26,BLK),C(190,278,26,BLK),C(270,278,26,BLK),C(110,278,10,RED),C(190,278,10,RED),C(270,278,10,RED)]),
+ S_('Vehicles','tractor','farm',['Tractor','Tractor on the Farm','Tractor Harvest Day'],MNT,l=>[
+   R(270,120,12,50,DGR),R(110,110,80,130,LGR,6),R(124,124,52,50,PBL,4),R(186,170,124,70,LGR,8),
+   ...(l>0?[L('M290 180 V230 M300 180 V230'),C(306,190,7,YEL)]:[]),C(140,250,50,BLK),C(140,250,20,YEL),C(280,268,32,BLK),C(280,268,12,YEL),
+   ...(l>1?[R(196,120,60,50,TAN,6),L('M196 136 H256 M196 152 H256')]:[])]),
+ // TOYS
+ S_('Toys','teddy','indoor',['Teddy Bear','Teddy at Home','Teddy Tea Party'],LPK,l=>place([
+   C(135,100,34,BRN),C(265,100,34,BRN),C(135,100,16,TAN),C(265,100,16,TAN),E(200,275,92,85,BRN),E(200,285,52,50,TAN),
+   E(112,252,28,50,BRN,25),E(288,252,28,50,BRN,-25),E(140,345,42,32,BRN),E(260,345,42,32,BRN),...(l>0?[E(140,350,20,15,TAN),E(260,350,20,15,TAN)]:[]),
+   C(200,150,78,BRN),E(200,180,34,26,TAN),E(200,168,12,9,BLK),C(170,135,8,BLK),C(230,135,8,BLK),L('M188 190 Q200 200 212 190'),
+   ...(l>1?[P('M200 232 L170 214 L170 250 Z',RED),P('M200 232 L230 214 L230 250 Z',RED),C(200,232,8,RED)]:[])],200,238,.8)),
+ S_('Toys','ball','beach',['Beach Ball','Ball on the Beach','Beach Ball Fun'],LPK,l=>[
+   ...(l>1?[E(200,302,96,10,GRY)]:[]),C(200,190,110,WHT),P('M200 80 A110 110 0 0 0 200 300 Q130 190 200 80 Z',RED),P('M200 80 A110 110 0 0 1 200 300 Q270 190 200 80 Z',BLU),
+   P('M200 80 Q172 190 200 300 Q228 190 200 80 Z',YEL),...(l>0?[E(150,130,12,22,WHT,30)]:[]),...(l>1?[C(200,80,12,LGR)]:[])]),
+ S_('Toys','robot','indoor',['Robot','Robot Friend','Robot Workshop'],PBL,l=>[
+   L('M200 70 V46'),C(200,40,8,RED),...(l>1?[R(140,94,10,24,RED),R(250,94,10,24,RED)]:[]),R(150,70,100,80,GRY,12),C(178,104,12,SKY),C(222,104,12,SKY),R(176,126,48,10,DGR,4),
+   R(186,150,28,12,DGR),R(104,170,26,70,GRY,10),R(270,170,26,70,GRY,10),C(117,246,12,DGR),C(283,246,12,DGR),R(150,262,36,38,GRY,6),R(214,262,36,38,GRY,6),
+   R(130,162,140,100,BLU,12),R(166,184,68,50,PBL,6),...(l>0?[C(184,200,6,RED),C(200,200,6,YEL),C(216,200,6,LGR)]:[]),...(l>1?[P('M200 228 l-10 -10 a6 6 0 0 1 10 -6 a6 6 0 0 1 10 6 Z',PNK)]:[])]),
+ S_('Toys','blocks','indoor',['Toy Blocks','Blocks at Playtime','Block Tower Day'],LPK,l=>[
+   R(80,200,100,100,RED),G('80,200 110,176 210,176 180,200',ORG),G('180,200 210,176 210,276 180,300',DBR),
+   R(190,200,100,100,BLU),G('190,200 220,176 320,176 290,200',SKY),G('290,200 320,176 320,276 290,300',IND),
+   R(135,100,100,100,YEL),G('135,100 165,76 265,76 235,100',PCH),G('235,100 265,76 265,176 235,200',AMB),
+   ...(l>0?[L('M110 280 L130 220 L150 280 M118 258 H142 M222 220 V280 H244 Q262 280 262 265 Q262 250 244 250 H222 M222 250 H240 Q256 250 256 235 Q256 220 240 220 H222 M205 128 Q170 120 168 150 Q170 180 205 172')]:[]),
+   ...(l>1?[C(48,282,18,PNK),G(star(340,90,18),YEL)]:[])]),
+ // FOOD
+ S_('Food','cupcake','party',['Cupcake','Cupcake Party','Birthday Cupcake'],LPK,l=>[
+   ...(l>0?[E(200,300,120,14,WHT)]:[]),P('M130 200 H270 L250 300 H150 Z',PNK),L('M160 200 L168 300 M190 200 L193 300 M210 200 L207 300 M240 200 L232 300'),
+   P('M120 205 Q110 170 140 160 Q140 120 180 120 Q190 90 220 110 Q260 110 262 150 Q292 160 280 205 Z',LPK),C(212,98,16,RED),L('M214 82 Q220 66 232 62'),
+   ...(l>0?[C(156,176,4,YEL),C(190,150,4,BLU),C(236,140,4,LGR),C(250,182,4,PUR),C(200,184,4,ORG)]:[]),...(l>1?[C(170,140,4,PUR),C(224,170,4,YEL),C(140,194,4,BLU),C(260,196,4,LGR)]:[])]),
+ S_('Food','ice-cream','beach',['Ice Cream','Ice Cream at the Beach','Ice Cream Summer Treat'],PCH,l=>[
+   G('150,170 250,170 200,300',TAN),...(l>0?[L('M160 190 L224 260 M180 170 L236 236 M240 190 L176 260 M220 170 L164 236')]:[]),
+   C(200,150,54,LPK),C(200,92,42,BRN),...(l>0?[C(200,46,12,RED)]:[]),...(l>1?[C(184,80,3,YEL),C(214,96,3,BLU),C(200,110,3,LGR),C(222,72,3,PNK),C(170,140,4,WHT),C(226,150,4,WHT)]:[])]),
+];
+
+function buildDrawings(){
+  const MONTHS = ['2026-11','2026-10','2026-09'], LV = ['Easy','Medium','Hard'];
+  const out = [];
+  SUBJECTS.forEach((s,si)=>{
+    [0,1,2].forEach(l=>{
+      const body = s.fn(l);
+      let parts;
+      if (l===0) parts = [BGR(s.easyBg), ...place(body,200,325,.95)];
+      else { const sc = SCENES[s.scene], k = l===1 ? .82 : .74, f = sc.f(l); parts = [...f.back, ...place(body,200,sc.by,k), ...f.front]; }
+      out.push({id:`${s.key}-${LV[l].toLowerCase()}`, name:s.names[l], cat:s.cat, level:LV[l], month:MONTHS[(si+l)%3], parts});
+    });
+  });
+  return out;
+}
+
+let DRAWINGS = buildDrawings();
+
+/* ---------- rendering ---------- */
+const escA = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const attrs = o => Object.entries(o).filter(([k])=>k!=='fill').map(([k,v])=>`${k}="${escA(v)}"`).join(' ');
+const vbOf = d => d.vb || '0 0 400 400';
+const scaleOf = d => (+vbOf(d).split(/[\s,]+/)[2] || 400) / 400;
+const strokeD = p => p.length===1 ? `M${p[0][0]} ${p[0][1]}l.1 0` : 'M'+p.map(q=>q[0]+' '+q[1]).join('L');
+function colorLayer(d, fills, anim){
+  return d.parts.map((p,i)=> p[2]==='line' ? '' :
+    `<${p[0]} ${attrs(p[1])} data-i="${i}" fill="${fills[i]||'#FFFFFF'}"${anim?` class="pf" style="animation-delay:${(i*0.09).toFixed(2)}s"`:''}/>`).join('');
+}
+const brushLayer = strokes => strokes.map((s,j)=>`<path data-s="${j}" d="${strokeD(s.p)}" stroke="${s.c}" stroke-width="${s.w}" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`).join('');
+function lineLayer(d){
+  const w = 4*scaleOf(d);
+  return d.parts.map(p=>`<${p[0]} ${attrs(p[1])} fill="${p[2]==='line'?'none':'#FFFFFF'}" stroke="#1F1F1F" stroke-width="${w}" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round"/>`).join('');
+}
+/* Line art is drawn on top with multiply blending, so colors and brush strokes always stay "inside the lines". */
+function renderSvg(d, fills={}, strokes=[], opts={}){
+  return `<svg viewBox="${vbOf(d)}" xmlns="http://www.w3.org/2000/svg" ${opts.label?`role="img" aria-label="${escA(opts.label)}"`:'aria-hidden="true"'}><g class="Lc">${colorLayer(d,fills,opts.anim)}</g><g class="Lb">${brushLayer(strokes)}</g><g class="Ll" style="mix-blend-mode:multiply" pointer-events="none">${lineLayer(d)}</g></svg>`;
+}
+const refFills = d => Object.fromEntries(d.parts.map((p,i)=>[i,p[2]]).filter(([,c])=>c && c!=='line'));
+const monthShort = m => { const [y,mo]=m.split('-'); return new Date(+y, +mo-1, 1).toLocaleString('en-US',{month:'short',year:'numeric'}); };
+
+/* ---------- saved artwork (preview: this browser; developer: database) ---------- */
+const ART_KEY = 'sb-artwork-v1';
+let ART = [];
+function loadArt(){ try{ ART = JSON.parse(localStorage.getItem(ART_KEY)||'[]') || []; }catch(_){ ART = []; } }
+function persistArt(){ try{ localStorage.setItem(ART_KEY, JSON.stringify(ART)); }catch(_){} }
+const findD = id => DRAWINGS.find(d=>d.id===id);
+
+/* ---------- portal lists ---------- */
+let selCat = 'All', selLevel = 'All levels', query = '', shown = 24;
+const PAGE = 24;
+function drawingCard(d, interactive){
+  const inner = `${d.month===CURRENT_MONTH?'<span class="newtag">NEW</span>':''}<span class="dthumb">${renderSvg(d)}</span><span class="dbody"><span class="dname">${esc(d.name)}</span><span class="meta"><span class="pill">${esc(d.cat)}</span><span class="pill lv-${esc(d.level)}">${esc(d.level)}</span></span></span>`;
+  return interactive ? `<button type="button" class="dcard" data-open="${d.id}" aria-label="Color ${escA(d.name)}">${inner}</button>`
+                     : `<a class="dcard" href="#pricing" data-route="pricing">${inner}</a>`;
+}
+const MORD = m => -parseInt(m.replace('-',''),10);
+function filtered(){
+  const q = query.trim().toLowerCase();
+  return DRAWINGS.filter(d=>(selCat==='All'||d.cat===selCat)&&(selLevel==='All levels'||d.level===selLevel)&&(!q||d.name.toLowerCase().includes(q)||d.cat.toLowerCase().includes(q)))
+    .sort((a,b)=>MORD(a.month)-MORD(b.month));
+}
+function renderDrawings(){
+  document.getElementById('catFilters').innerHTML = ['All', ...CATS].map(c=>`<button type="button" data-cat="${c}" aria-pressed="${c===selCat}">${c}${c==='All'?'':` <span style="opacity:.7">${DRAWINGS.filter(d=>d.cat===c).length}</span>`}</button>`).join('');
+  document.getElementById('levelFilters').innerHTML = ['All levels', ...LEVELS].map(c=>`<button type="button" data-level="${c}" aria-pressed="${c===selLevel}">${c}</button>`).join('');
+  const list = filtered();
+  document.getElementById('resultCount').textContent = `${list.length} drawing${list.length===1?'':'s'}`;
+  document.getElementById('portalDrawings').innerHTML = list.length ? list.slice(0,shown).map(d=>drawingCard(d,true)).join('') : '<p class="note">No drawings match. Try another word or category.</p>';
+  const more = document.getElementById('moreBtn');
+  more.hidden = list.length <= shown; more.textContent = `Show more drawings (${list.length-shown} more)`;
+  const showcase = ['lion-easy','car-medium','fish-hard','rainbow-easy','teddy-medium','apple-tree-hard'].map(findD).filter(Boolean);
+  document.getElementById('homeDrawings').innerHTML = showcase.map(d=>drawingCard(d,false)).join('');
+  document.getElementById('statDrawings').textContent = DRAWINGS.length;
+  document.getElementById('statNew').textContent = DRAWINGS.filter(d=>d.month===CURRENT_MONTH).length;
+}
+function renderArt(){
+  const list = ART.filter(a=>findD(a.drawingId)).sort((a,b)=>b.updated-a.updated);
+  document.getElementById('statArt').textContent = list.length;
+  document.getElementById('artTabBtn').textContent = `My artwork (${list.length})`;
+  document.getElementById('artGrid').innerHTML = list.length ? `<div class="dgrid">${list.map(a=>{
+    const d = findD(a.drawingId);
+    return `<div class="dcard" style="cursor:default"><span class="dthumb">${renderSvg(d,a.fills,a.strokes)}</span><span class="dbody"><span class="dname">${esc(a.name)}</span><span class="meta">${a.score!=null?`<span class="pill scorepill">★ ${a.score}/10</span>`:''}<span class="pill">${esc(d.name)}</span><span class="pill">Saved ${new Date(a.updated).toLocaleDateString('en-US',{month:'short',day:'numeric'})}</span></span>
+      <span class="acts"><button class="btn primary small" type="button" data-art-open="${a.id}">Continue</button><button class="btn small" type="button" data-art-rename="${a.id}">Rename</button><button class="linkbtn" type="button" data-art-del="${a.id}">Delete</button></span></span></div>`;
+  }).join('')}</div>` : `<div class="empty"><h3>No saved artwork yet</h3><p class="note">Color a drawing and tap Save. Your pictures will appear here.</p><button class="btn primary small" type="button" data-tab="drawings">Pick a drawing</button></div>`;
+}
+let adminDirty = true;
+function renderAdmin(){
+  if (!document.querySelector('[data-page="admin"]').classList.contains('on')){ adminDirty = true; return; }
+  adminDirty = false;
+  document.getElementById('dCat').innerHTML = CATS.map(c=>`<option>${c}</option>`).join('');
+  document.getElementById('adminCount').textContent = `${DRAWINGS.length} drawings live.`;
+  document.getElementById('adminRows').innerHTML = [...DRAWINGS].sort((a,b)=>MORD(a.month)-MORD(b.month)).map(d=>
+    `<tr><td><div class="tn">${renderSvg(d)}</div></td><td><b>${esc(d.name)}</b></td><td>${esc(d.cat)}</td><td>${esc(d.level)}</td><td>${monthShort(d.month)}</td><td class="n">${d.parts.filter(p=>p[2]!=='line').length}</td><td><button class="linkbtn" data-remove="${d.id}">Remove</button></td></tr>`).join('');
+}
+
+/* ---------- studio ---------- */
+const S = { d:null, fills:{}, strokes:[], artId:null, name:'', dirty:false, tool:'fill', color:'#E53935', size:1, undo:[], redo:[] };
+const SIZES = [6,14,26];
+const canvasEl = document.getElementById('sCanvas');
+let svgEl, Lc, Lb, live=null, erasing=false, eraseChanged=false;
+
+function openStudio(drawingId, artId){
+  const d = findD(drawingId); if (!d) return;
+  const a = artId ? ART.find(x=>x.id===artId) : null;
+  Object.assign(S, {d, score: a&&a.score!=null?a.score:null, fills: a?{...a.fills}:{}, strokes: a?JSON.parse(JSON.stringify(a.strokes)):[], artId: a?a.id:null, name: a?a.name:d.name, dirty:false, undo:[], redo:[]});
+  canvasEl.innerHTML = renderSvg(d, S.fills, S.strokes, {label:`Coloring page: ${d.name}`});
+  svgEl = canvasEl.querySelector('svg'); Lc = svgEl.querySelector('.Lc'); Lb = svgEl.querySelector('.Lb');
+  document.getElementById('sRef').innerHTML = renderSvg(d, refFills(d), [], {label:`Colored example of ${d.name}`});
+  document.getElementById('portalHome').hidden = true;
+  document.getElementById('studio').hidden = false;
+  updateHeader(); updateHist(); window.scrollTo(0,0);
+}
+function closeStudio(){
+  document.getElementById('studio').hidden = true;
+  document.getElementById('portalHome').hidden = false;
+  renderArt();
+}
+function repaint(){ Lc.innerHTML = colorLayer(S.d, S.fills); Lb.innerHTML = brushLayer(S.strokes); }
+const snap = () => JSON.stringify({f:S.fills, s:S.strokes});
+function pushHist(){ S.undo.push(snap()); if (S.undo.length>80) S.undo.shift(); S.redo=[]; updateHist(); }
+function restore(json){ const o=JSON.parse(json); S.fills=o.f; S.strokes=o.s; repaint(); markDirty(); }
+function updateHist(){ document.getElementById('undoBtn').disabled = !S.undo.length; document.getElementById('redoBtn').disabled = !S.redo.length; }
+function markDirty(){ S.dirty = true; updateHeader(); }
+function updateHeader(){
+  document.getElementById('sName').textContent = S.name;
+  const st = document.getElementById('sState');
+  st.textContent = !S.artId ? 'Not saved yet' : S.dirty ? 'Unsaved changes' : (S.score!=null ? `Saved · ★ ${S.score}/10` : 'Saved');
+  st.classList.toggle('dirty', !S.artId || S.dirty);
+}
+function setTool(t){
+  S.tool = t;
+  document.querySelectorAll('[data-tool]').forEach(b=>b.setAttribute('aria-pressed', b.dataset.tool===t));
+  canvasEl.className = 's-canvas m-'+t;
+}
+function setColor(c){
+  S.color = c;
+  document.getElementById('curColor').style.background = c;
+  document.querySelectorAll('#swatches .sw').forEach(b=>b.setAttribute('aria-pressed', b.dataset.color===c));
+  if (S.tool==='eraser') setTool('fill');
+}
+function svgPoint(e){
+  const pt = svgEl.createSVGPoint(); pt.x=e.clientX; pt.y=e.clientY;
+  const r = pt.matrixTransform(svgEl.getScreenCTM().inverse());
+  return [f1(r.x), f1(r.y)];
+}
+function eraseAt(e){
+  const el = document.elementFromPoint(e.clientX, e.clientY);
+  if (!el || !svgEl.contains(el)) return;
+  if (el.dataset.s !== undefined){ S.strokes.splice(+el.dataset.s,1); Lb.innerHTML = brushLayer(S.strokes); eraseChanged = true; return; }
+  const r = el.closest('[data-i]');
+  if (r && S.fills[r.dataset.i]){ delete S.fills[r.dataset.i]; r.setAttribute('fill','#FFFFFF'); eraseChanged = true; }
+}
+canvasEl.addEventListener('pointerdown', e=>{
+  if (!svgEl || e.button>0) return;
+  e.preventDefault();
+  if (S.tool==='fill'){
+    const r = e.target.closest('[data-i]');
+    if (r && (S.fills[r.dataset.i]||'#FFFFFF') !== S.color){ pushHist(); S.fills[r.dataset.i]=S.color; r.setAttribute('fill',S.color); markDirty(); }
+    return;
+  }
+  canvasEl.setPointerCapture(e.pointerId);
+  if (S.tool==='brush'){
+    pushHist();
+    live = {c:S.color, w:SIZES[S.size]*scaleOf(S.d), p:[svgPoint(e)]};
+    const p = document.createElementNS('http://www.w3.org/2000/svg','path');
+    p.setAttribute('stroke',live.c); p.setAttribute('stroke-width',live.w); p.setAttribute('fill','none'); p.setAttribute('stroke-linecap','round'); p.setAttribute('stroke-linejoin','round');
+    p.setAttribute('d', strokeD(live.p)); Lb.appendChild(p); live.el = p;
+  } else if (S.tool==='eraser'){
+    S.undo.push(snap()); erasing = true; eraseChanged = false; eraseAt(e);
+  }
+});
+canvasEl.addEventListener('pointermove', e=>{
+  if (live){
+    const pt = svgPoint(e), last = live.p[live.p.length-1];
+    if (Math.hypot(pt[0]-last[0], pt[1]-last[1]) > 1.5){ live.p.push(pt); live.el.setAttribute('d', strokeD(live.p)); }
+  } else if (erasing) eraseAt(e);
+});
+function endPointer(){
+  if (live){ S.strokes.push({c:live.c, w:live.w, p:live.p}); live = null; Lb.innerHTML = brushLayer(S.strokes); markDirty(); }
+  if (erasing){ erasing = false; if (eraseChanged){ S.redo=[]; markDirty(); } else S.undo.pop(); updateHist(); }
+}
+canvasEl.addEventListener('pointerup', endPointer);
+canvasEl.addEventListener('pointercancel', endPointer);
+
+function saveArt(name, asNew){
+  const now = Date.now();
+  const sc = hasColor() ? computeScore().score : null;
+  if (S.artId && !asNew){
+    const a = ART.find(x=>x.id===S.artId);
+    Object.assign(a, {name, score:sc, fills:{...S.fills}, strokes:JSON.parse(JSON.stringify(S.strokes)), updated:now});
+  } else {
+    const a = {id:'a'+now, drawingId:S.d.id, name, score:sc, fills:{...S.fills}, strokes:JSON.parse(JSON.stringify(S.strokes)), created:now, updated:now};
+    ART.push(a); S.artId = a.id;
+  }
+  S.name = name; S.score = sc; S.dirty = false; persistArt(); updateHeader(); renderArt();
+  toast(sc===null ? `Saved "${name}" to My artwork.` : `Saved "${name}" with a score of ${sc}/10.`);
+}
+function nextName(d){ const n = ART.filter(a=>a.drawingId===d.id).length + 1; return `My ${d.name}${n>1?' '+n:''}`; }
+function onSave(after){
+  if (S.artId){ saveArt(S.name); after && after(); return; }
+  ask({title:'Save your picture', text:'Give your picture a name so you can find it later.', input:nextName(S.d),
+    buttons:[{label:'Cancel'},{label:'Save',primary:true,fn:v=>{ saveArt(v||nextName(S.d)); after && after(); }}]});
+}
+
+/* ---------- modal ---------- */
+const modal = document.getElementById('modal'), mInput = document.getElementById('mInput');
+let mPrimary = null, mLastFocus = null;
+function ask({title,text,input,buttons}){
+  mLastFocus = document.activeElement;
+  document.getElementById('mTitle').textContent = title;
+  document.getElementById('mText').textContent = text||'';
+  document.getElementById('mText').hidden = !text;
+  document.getElementById('mField').hidden = input===undefined;
+  if (input!==undefined) mInput.value = input;
+  const box = document.getElementById('mBtns'); box.innerHTML = '';
+  mPrimary = null;
+  buttons.forEach(b=>{
+    const el = document.createElement('button'); el.type='button';
+    el.className = 'btn small' + (b.primary?' primary':''); el.textContent = b.label;
+    if (b.danger){ el.style.background='var(--coral)'; el.style.borderColor='var(--coral)'; el.style.color='#fff'; }
+    const run = ()=>{ const v = mInput.value.trim(); closeModal(); b.fn && b.fn(v); };
+    el.addEventListener('click', run); box.appendChild(el);
+    if (b.primary) mPrimary = run;
+  });
+  modal.hidden = false;
+  setTimeout(()=>{ if (input!==undefined){ mInput.focus(); mInput.select(); } else box.lastChild.focus(); }, 30);
+}
+function closeModal(){ modal.hidden = true; mLastFocus && mLastFocus.focus && mLastFocus.focus(); }
+mInput.addEventListener('keydown', e=>{ if (e.key==='Enter' && mPrimary){ e.preventDefault(); mPrimary(); } });
+document.addEventListener('keydown', e=>{
+  if (e.key==='Escape' && !modal.hidden) closeModal();
+  if (e.key==='Escape' && !celEl.hidden) closeCelebrate();
+  if (!document.getElementById('studio').hidden && modal.hidden && (e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='z'){ e.preventDefault(); (e.shiftKey?doRedo:doUndo)(); }
+});
+modal.addEventListener('click', e=>{ if (e.target===modal) closeModal(); });
+
+function doUndo(){ if (!S.undo.length) return; S.redo.push(snap()); restore(S.undo.pop()); updateHist(); }
+function doRedo(){ if (!S.redo.length) return; S.undo.push(snap()); restore(S.redo.pop()); updateHist(); }
+
+/* studio controls */
+document.getElementById('swatches').innerHTML = PALETTE.map(c=>`<button type="button" class="sw" data-color="${c}" style="background:${c}" aria-label="Color ${c}" aria-pressed="false"></button>`).join('');
+document.getElementById('undoBtn').addEventListener('click', doUndo);
+document.getElementById('redoBtn').addEventListener('click', doRedo);
+document.getElementById('clearBtn').addEventListener('click', ()=>{
+  if (!Object.keys(S.fills).length && !S.strokes.length) return;
+  pushHist(); S.fills={}; S.strokes=[]; repaint(); markDirty(); toast('Cleared. Tap Undo to bring it back.');
+});
+document.getElementById('saveBtn').addEventListener('click', ()=>onSave());
+document.getElementById('renameBtn').addEventListener('click', ()=>{
+  ask({title:'Rename picture', input:S.name, buttons:[{label:'Cancel'},{label:'Rename',primary:true,fn:v=>{
+    if (!v) return; S.name = v;
+    if (S.artId){ const a = ART.find(x=>x.id===S.artId); a.name = v; a.updated = Date.now(); persistArt(); renderArt(); toast('Renamed.'); }
+    updateHeader();
+  }}]});
+});
+document.getElementById('backBtn').addEventListener('click', ()=>{
+  if (!S.dirty) return closeStudio();
+  ask({title:'Save your picture?', text:'You have changes that are not saved yet.', buttons:[
+    {label:'Keep coloring'}, {label:'Leave without saving', fn:()=>closeStudio()}, {label:'Save', primary:true, fn:()=>onSave(closeStudio)}]});
+});
+
+/* ---------- scoring: compare colors with the example ---------- */
+const FAM = {'#E53935':'red','#FF7043':'orange','#FFB300':'yellow','#FDD835':'yellow','#C0CA33':'green','#7CB342':'green','#2E7D32':'green','#00897B':'green',
+  '#4FC3F7':'blue','#1E88E5':'blue','#3949AB':'blue','#B3E5FC':'blue','#8E24AA':'purple','#EC407A':'pink','#F8BBD0':'pink','#FFE0B2':'tan','#D7A86E':'tan',
+  '#8D6E63':'brown','#5D4037':'brown','#BDBDBD':'gray','#616161':'gray','#212121':'black','#FFFFFF':'white','#C8E6C9':'green'};
+const rgb = h => [1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+function famOf(hex){
+  hex = String(hex).toUpperCase(); if (FAM[hex]) return FAM[hex];
+  const c = rgb(hex); let best = PALETTE[0], bd = 1e9;
+  PALETTE.forEach(p=>{ const q = rgb(p), dd = (c[0]-q[0])**2+(c[1]-q[1])**2+(c[2]-q[2])**2; if (dd<bd){ bd=dd; best=p; } });
+  return FAM[best];
+}
+const hasColor = () => Object.keys(S.fills).length>0 || S.strokes.length>0;
+function computeScore(){
+  const parts = S.d.parts.map((p,i)=>[p,i]).filter(([p])=>p[2] && p[2]!=='line');
+  const ok = parts.filter(([p,i])=>famOf(S.fills[i]||'#FFFFFF')===famOf(p[2])).length;
+  return {score: Math.round(ok/parts.length*10), ok, total: parts.length};
+}
+const celEl = document.getElementById('celebrate');
+const STAR = on => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z" fill="${on?'var(--sun)':'none'}" stroke="var(--ink)" stroke-width="1.6" stroke-linejoin="round"/></svg>`;
+function submitDrawing(){
+  if (!hasColor()) return toast('Color your picture first, then tap Submit.');
+  const {score, ok, total} = computeScore();
+  S.score = score;
+  const msg = score===10 ? ['Perfect!','Every color matches the example. Superstar!']
+            : score>=8 ? ['Amazing!','Almost every color matches. Wonderful work!']
+            : score>=6 ? ['Great job!','Lots of colors match. Keep it up!']
+            : score>=3 ? ['Nice work!','Peek at the example to match even more colors.']
+            : ['Good try!','Look at the example picture and try matching the colors.'];
+  document.getElementById('celScore').textContent = score;
+  document.getElementById('celTitle').textContent = msg[0];
+  document.getElementById('celText').textContent = `${ok} of ${total} parts match the example. ${msg[1]}`;
+  document.getElementById('celStars').innerHTML = [1,2,3,4,5].map(n=>STAR(n<=Math.round(score/2))).join('');
+  document.getElementById('celSave').textContent = S.artId && !S.dirty && S.score===score ? 'Update score' : 'Save with score';
+  celEl.hidden = false;
+  document.getElementById('celSave').focus();
+  if (score>=3) confetti();
+}
+function closeCelebrate(){ celEl.hidden = true; stopConfetti(); document.getElementById('submitBtn').focus(); }
+document.getElementById('submitBtn').addEventListener('click', submitDrawing);
+document.getElementById('celKeep').addEventListener('click', closeCelebrate);
+document.getElementById('celSave').addEventListener('click', ()=>{ closeCelebrate(); onSave(); });
+celEl.addEventListener('click', e=>{ if (e.target===celEl) closeCelebrate(); });
+
+let confRAF = 0;
+function stopConfetti(){ cancelAnimationFrame(confRAF); const c=document.getElementById('confetti'); c.getContext('2d').clearRect(0,0,c.width,c.height); }
+function confetti(){
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const c = document.getElementById('confetti'), ctx = c.getContext('2d'), dpr = window.devicePixelRatio||1;
+  c.width = innerWidth*dpr; c.height = innerHeight*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+  const P = Array.from({length:140}, ()=>({x:Math.random()*innerWidth, y:-20-Math.random()*innerHeight*.6, vx:(Math.random()-.5)*2.4, vy:2+Math.random()*3.5,
+    r:Math.random()*Math.PI, vr:(Math.random()-.5)*.25, w:6+Math.random()*7, h:4+Math.random()*5, c:PALETTE[Math.floor(Math.random()*18)]}));
+  const t0 = performance.now();
+  const tick = t => {
+    ctx.clearRect(0,0,innerWidth,innerHeight);
+    P.forEach(p=>{ p.x+=p.vx; p.y+=p.vy; p.vy+=.03; p.r+=p.vr; ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r); ctx.fillStyle=p.c; ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h); ctx.restore(); });
+    if (t - t0 < 4200) confRAF = requestAnimationFrame(tick); else ctx.clearRect(0,0,innerWidth,innerHeight);
+  };
+  cancelAnimationFrame(confRAF); confRAF = requestAnimationFrame(tick);
+}
+
+/* ---------- hero demo ---------- */
+const heroD = findD('house-medium');
+const heroFills = refFills(heroD);
+let heroColor = '#E53935';
+const heroCanvas = document.getElementById('heroCanvas');
+heroCanvas.innerHTML = renderSvg(heroD, heroFills, [], {anim:true, label:'Try coloring: a house with a tree, sun and cloud'});
+const HERO_PAL = ['#E53935','#FFB300','#FDD835','#7CB342','#4FC3F7','#8E24AA','#EC407A','#8D6E63'];
+document.getElementById('heroPal').innerHTML = HERO_PAL.map(c=>`<button type="button" class="sw" data-hcolor="${c}" style="background:${c};width:30px" aria-label="Color ${c}" aria-pressed="${c===heroColor}"></button>`).join('');
+heroCanvas.addEventListener('click', e=>{
+  const r = e.target.closest('[data-i]'); if (!r) return;
+  r.classList.remove('pf'); r.setAttribute('fill', heroColor);
+});
+
+/* ---------- pricing ---------- */
+function planCard(p){
+  return `<div class="plan${p.best?' best':''}">
+    ${p.bonus?`<span class="bonus">${p.bonus}</span>`:''}
+    <h3>${p.name}</h3>
+    <div class="price"><sup>$</sup>${p.price}</div>
+    <p class="renew">${p.renew}</p>
+    <button class="btn primary block" type="button" data-buy="${p.id}">Buy now</button>
+  </div>`;
+}
+document.getElementById('plansGrid').innerHTML = PLANS.map(planCard).join('');
+function startCheckout(planId){
+  const plan = PLANS.find(p=>p.id===planId);
+  if (window.SB_CHECKOUT) return window.SB_CHECKOUT(plan);
+  toast(`Checkout for the ${plan.name} plan ($${plan.price}) will open here.`);
+}
+
+/* ---------- router: hash in preview, clean paths on live domain ---------- */
+const LIVE = /(^|\.)smaartcare\.online$|\.vercel\.app$/.test(location.hostname);
+const PAGES = ['home','pricing','login','portal','admin','contact','terms-of-service','privacy-policy','refund-policy'];
+const ALIASES = {'terms':'terms-of-service','termsofservice':'terms-of-service','terms-and-conditions':'terms-of-service','termsandconditions':'terms-of-service','tos':'terms-of-service',
+  'privacy':'privacy-policy','privacypolicy':'privacy-policy','refund':'refund-policy','refundpolicy':'refund-policy','refunds':'refund-policy'};
+const PLAN_ROUTES = PLANS.map(p=>'pricing-'+p.id);
+const toPath = r => r==='home' ? '/' : r.startsWith('pricing-') ? '/pricing/'+r.slice(8) : '/'+r;
+function routeFromLocation(){
+  if (LIVE){
+    const p = location.pathname.replace(/\/+$/,'') || '/';
+    if (p==='/') return 'home';
+    const m = p.match(/^\/pricing\/(.+)$/); if (m) return 'pricing-'+m[1];
+    return p.slice(1);
+  }
+  return (location.hash||'#home').slice(1);
+}
+let loggedIn = false;
+function render(){
+  let r = routeFromLocation();
+  r = ALIASES[r.toLowerCase()] || r;
+  if (!PAGES.includes(r) && !PLAN_ROUTES.includes(r)) r='home';
+  if (r==='portal' && !loggedIn) r='login'; // developer: real session check
+  const page = r.startsWith('pricing') ? 'pricing' : r;
+  document.querySelectorAll('[data-page]').forEach(el=>el.classList.toggle('on', el.dataset.page===page));
+  document.querySelectorAll('nav a[data-route]').forEach(a=>{ if(a.dataset.route===page) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
+  const single = PLANS.find(p=>'pricing-'+p.id===r);
+  document.getElementById('pricingAll').hidden = !!single;
+  document.getElementById('pricingOne').hidden = !single;
+  if (single) document.getElementById('singlePlan').innerHTML = planCard(single);
+  const titles = {home:'Smaart Care · Online Coloring for Kids', pricing:'Pricing · Smaart Care', login:'Member Login · Smaart Care', portal:'My Portal · Smaart Care', admin:'Admin · Smaart Care', contact:'Contact · Smaart Care', 'terms-of-service':'Terms of Service · Smaart Care', 'privacy-policy':'Privacy Policy · Smaart Care', 'refund-policy':'Refund Policy · Smaart Care'};
+  if (LIVE) document.title = single ? `${single.name} Plan · Smaart Care` : titles[page];
+  if (page==='admin' && adminDirty) renderAdmin();
+  window.scrollTo(0,0);
+}
+function go(route){ if (LIVE){ history.pushState({}, '', toPath(route)); render(); } else location.hash = route; }
+window.addEventListener('hashchange', render);
+window.addEventListener('popstate', render);
+
+function showTab(name){
+  document.querySelectorAll('[role="tab"]').forEach(t=>t.setAttribute('aria-selected', t.dataset.tab===name));
+  ['drawings','artwork','account'].forEach(n=>document.getElementById('tab-'+n).hidden = n!==name);
+}
+
+/* ---------- global clicks ---------- */
+document.addEventListener('click', e=>{
+  const a = e.target.closest('a[data-route]');
+  if (a && LIVE){ e.preventDefault(); go(a.dataset.route); return; }
+  let el;
+  if ((el = e.target.closest('[data-buy]'))) return startCheckout(el.dataset.buy);
+  if ((el = e.target.closest('[data-open]'))) return openStudio(el.dataset.open);
+  if ((el = e.target.closest('[data-cat]'))){ selCat = el.dataset.cat; shown = PAGE; renderDrawings(); return; }
+  if ((el = e.target.closest('[data-level]'))){ selLevel = el.dataset.level; shown = PAGE; renderDrawings(); return; }
+  if (e.target.closest('#moreBtn')){ shown += PAGE; renderDrawings(); return; }
+  if ((el = e.target.closest('[data-tab]'))) return showTab(el.dataset.tab);
+  if ((el = e.target.closest('[data-tool]'))) return setTool(el.dataset.tool);
+  if ((el = e.target.closest('[data-color]'))) return setColor(el.dataset.color);
+  if ((el = e.target.closest('[data-size]'))){
+    S.size = +el.dataset.size; document.querySelectorAll('[data-size]').forEach(b=>b.setAttribute('aria-pressed', b===el));
+    if (S.tool!=='brush') setTool('brush'); return;
+  }
+  if ((el = e.target.closest('[data-hcolor]'))){
+    heroColor = el.dataset.hcolor; document.querySelectorAll('[data-hcolor]').forEach(b=>b.setAttribute('aria-pressed', b===el)); return;
+  }
+  if ((el = e.target.closest('[data-art-open]'))){ const art = ART.find(x=>x.id===el.dataset.artOpen); if (art) openStudio(art.drawingId, art.id); return; }
+  if ((el = e.target.closest('[data-art-rename]'))){
+    const art = ART.find(x=>x.id===el.dataset.artRename);
+    ask({title:'Rename picture', input:art.name, buttons:[{label:'Cancel'},{label:'Rename',primary:true,fn:v=>{ if(!v) return; art.name=v; art.updated=Date.now(); persistArt(); renderArt(); toast('Renamed.'); }}]});
+    return;
+  }
+  if ((el = e.target.closest('[data-art-del]'))){
+    const art = ART.find(x=>x.id===el.dataset.artDel);
+    ask({title:'Delete this picture?', text:`"${art.name}" will be removed from My artwork.`, buttons:[{label:'Cancel'},{label:'Delete',danger:true,primary:true,fn:()=>{ ART = ART.filter(x=>x.id!==art.id); persistArt(); renderArt(); toast('Picture deleted.'); }}]});
+    return;
+  }
+  if ((el = e.target.closest('[data-remove]'))){ DRAWINGS = DRAWINGS.filter(d=>d.id!==el.dataset.remove); renderDrawings(); renderAdmin(); renderArt(); toast('Drawing removed.'); return; }
+  if ((el = e.target.closest('[data-action]'))){ toast({manage:'Payment method update opens here.',cancel:'Cancellation flow opens here.',password:'Password change opens here.'}[el.dataset.action]); return; }
+  if ((el = e.target.closest('[data-copy]'))){ try{ navigator.clipboard.writeText(el.dataset.copy).then(()=>toast('Email copied.'),()=>selectNear(el)); }catch(_){ selectNear(el); } }
+});
+function selectNear(btn){ const c=btn.parentElement.querySelector('code'); const r=document.createRange(); r.selectNodeContents(c); const s=getSelection(); s.removeAllRanges(); s.addRange(r); toast('Press Ctrl+C to copy.'); }
+
+/* ---------- forms ---------- */
+let sTimer; document.getElementById('dSearch').addEventListener('input', e=>{ clearTimeout(sTimer); sTimer=setTimeout(()=>{ query=e.target.value; shown=PAGE; renderDrawings(); },150); });
+document.getElementById('loginForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  const id = document.getElementById('loginId').value.trim(), pw = document.getElementById('loginPw').value;
+  const st = document.getElementById('loginStatus');
+  if (!id || !pw){ st.textContent='Enter your login ID and password.'; st.hidden=false; return; }
+  st.hidden = true; loggedIn = true; closeStudio(); showTab('drawings'); go('portal'); // developer: real auth here
+});
+document.getElementById('logoutBtn').addEventListener('click', ()=>{ loggedIn=false; go('login'); });
+document.getElementById('contactForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  const st = document.getElementById('contactStatus');
+  st.textContent = 'Thanks! Your message has been sent. We reply within 1 business day.'; st.hidden = false; // developer: send to support@smaartcare.online
+  e.target.reset();
+});
+
+/* Admin: turn an uploaded SVG into tap-to-fill parts */
+const SHAPES = 'path,circle,rect,ellipse,polygon';
+const KEEP = ['d','cx','cy','r','rx','ry','x','y','width','height','points','transform'];
+function parseSvg(text){
+  const doc = new DOMParser().parseFromString(text, 'image/svg+xml');
+  const root = doc.documentElement;
+  if (!root || root.nodeName.toLowerCase()!=='svg') throw new Error('This file is not a valid SVG.');
+  let vb = root.getAttribute('viewBox');
+  if (!vb){ const w=parseFloat(root.getAttribute('width'))||400, h=parseFloat(root.getAttribute('height'))||400; vb=`0 0 ${w} ${h}`; }
+  const els = [...root.querySelectorAll(SHAPES)];
+  if (!els.length) throw new Error('No shapes found in this SVG.');
+  const fillable = PALETTE.filter(c=>!['#FFFFFF','#212121','#616161','#BDBDBD'].includes(c));
+  let k = 0;
+  const parts = els.map(el=>{
+    const o = {}; KEEP.forEach(a=>{ const v = el.getAttribute(a); if (v!==null) o[a]=v; });
+    const open = (el.getAttribute('fill')||'').toLowerCase()==='none' || /fill\s*:\s*none/i.test(el.getAttribute('style')||'');
+    return [el.nodeName.toLowerCase(), o, open ? 'line' : fillable[(k++) % fillable.length]];
+  });
+  return {vb, parts};
+}
+const titleFromFile = f => f.name.replace(/\.svg$/i,'').replace(/[-_]+/g,' ').replace(/\s+/g,' ').trim().replace(/\b\w/g,c=>c.toUpperCase());
+document.getElementById('uploadForm').addEventListener('submit', async e=>{
+  e.preventDefault();
+  const st = document.getElementById('uploadStatus');
+  const fail = m => { st.textContent=m; st.style.background='var(--tint-coral)'; st.hidden=false; };
+  const files = [...document.getElementById('dSvg').files], typed = document.getElementById('dName').value.trim();
+  if (!files.length) return fail('Choose at least one SVG file to upload.');
+  const meta = {cat:document.getElementById('dCat').value, level:document.getElementById('dLevel').value, month:document.getElementById('dMonth').value||CURRENT_MONTH};
+  const ok = [], bad = [];
+  for (const [i,f] of files.entries()){
+    try{
+      const {vb, parts} = parseSvg(await f.text());
+      const name = files.length===1 && typed ? typed : titleFromFile(f);
+      DRAWINGS.push({id:'u'+Date.now()+'-'+i, name, ...meta, vb, parts}); ok.push(name);
+    }catch(err){ bad.push(`${f.name}: ${err.message}`); }
+  }
+  renderDrawings(); adminDirty = true; renderAdmin();
+  st.textContent = (ok.length ? `Published ${ok.length} drawing${ok.length>1?'s':''}: ${ok.slice(0,5).join(', ')}${ok.length>5?'…':''}.` : '') + (bad.length ? ` Could not read ${bad.length}: ${bad.join('; ')}` : '');
+  st.style.background = bad.length && !ok.length ? 'var(--tint-coral)' : 'var(--tint-sage)'; st.hidden = false;
+  if (ok.length){ e.target.reset(); document.getElementById('dMonth').value = CURRENT_MONTH; }
+});
+
+let tt; function toast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.hidden=false; clearTimeout(tt); tt=setTimeout(()=>t.hidden=true, 3200); }
+
+/* ---------- boot ---------- */
+if (LIVE) document.querySelectorAll('a[data-route]').forEach(a=>a.setAttribute('href', toPath(a.dataset.route)));
+loadArt(); setColor('#E53935'); setTool('fill');
+renderDrawings(); renderArt(); renderAdmin(); render();
+</script>
+
+</body>
+</html>
